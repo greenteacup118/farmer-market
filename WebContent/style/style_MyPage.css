@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import url(/source/style_Reset.css);
+
+div#wrap {
+	width: 1900px;
+	border: none;
+	margin: 0px auto;
+}
+
+ /*헤더*/
+
+ /*헤더*/
+ 
+  /*메인*/
+main#main {
+	width: 1200px;
+	height: 1200px;
+    padding: 10px;
+    margin: 0px auto;
+    border: 1px solid #f80;
+}
+
+div#mypage {
+	width: 220px;
+	border: 1px solid #f08;
+}
+
+div#mainListArea {
+	flex: 1px;
+	border: 1px solid #000;
+}
+
+
+ /*메인*/
+ 
+  /*푸터*/
+
+ /*푸터*/
+ 

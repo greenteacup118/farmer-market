@@ -1,0 +1,206 @@
+@charset "UTF-8";
+@import url(/source/style_Reset.css);
+
+
+hr.sepLine {
+	margin-bottom: 20px;
+}
+
+div#goods_wrap {
+	margin: 0 50px;
+	/* border: 1px solid #000; */
+	width: 100%;
+}
+
+/* ########사진/가격 정보########*/
+
+div#goods_detail {
+	margin-bottom: 20px;
+}
+
+div#detailImg> img {
+	width: 455px;
+	height: 555px;
+}
+
+div#detail_info {
+	flex:1;
+}
+
+#detail_info>table {
+	border-collapse: collapse;
+	margin: 0 20px 0 70px;
+	width: 90%;
+}
+
+#detail_info>table td {
+	/* border: 1px solid #000; */
+	font-size: 15px;
+}
+
+#detail_info>table td:first-child {
+	width: 140px;
+}
+
+#detail_info>table td#goods_catch {
+	vertical-align: top;
+}
+
+#detail_info>table td.goods_price {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#detail_info>table td.goods_txt {
+	color: #666;
+}
+
+#detail_info>table td {
+	border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+#detail_info>table td.tdLine {
+	border: none;
+}
+
+/*###### 구매수량 버튼 조절######## */
+#detail_info>table td>div.cntBtn {	
+	text-align: center;
+	border: 1px solid #dddfe1;
+	width: 90px;
+}
+#detail_info>table td>div.cntBtn>* {
+	border: none;
+	background-color: #fff;
+	text-align: center;
+	font-size: 20px;
+}
+
+#detail_info>table td>div.cntBtn>button:hover {
+	cursor: pointer;
+}
+
+#detail_info>table td>div.cntBtn>input {
+	width: 40px;
+	outline: none;
+}
+
+/*####### 최종가격, 장바구니#######*/
+#detail_info>table td#totalPrice {
+	text-align: right;
+	padding: 30px 40px 10px 40px;
+}
+
+#detail_info>table td#totalPrice>span {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#detail_info>table td.goods_btnArea:first-child {
+	text-align: right;
+}
+
+#detail_info>table td.goods_btnArea i {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 25px;
+	/* border: 1px solid #000; */
+}
+
+#detail_info>table td.goods_btnArea button {
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	padding-right: 30px;
+	width: 90%;
+	height: 100%;
+	background-color: #5f0081;
+	border: none;
+	border-radius: 3px;
+}
+
+#detail_info>table td.goods_btnArea button:hover {
+	cursor: pointer;
+}
+
+
+/*######큌메뉴 시작######## */
+nav#quickmenu {
+	text-align: center;
+	position: sticky;	/* 큌메뉴가 따라다니도록 설정 */
+	top: 0;
+}
+
+#quickmenu li {
+	flex: 1;
+	margin-bottom: 20px;;
+	font-weight: bold;
+	color: rgba(102, 102, 102);
+	border: 1px solid #eee;
+	height: 60px;
+	line-height: 60px;
+	background-color: #fafafa;
+}
+
+#quickmenu li:hover {
+	cursor: pointer;
+}
+
+#quickmenu li:not(:first-child) {
+	border-left: none;
+}
+
+/*##### 상세설명 구간 시작 ########*/
+div#explain_goods {
+	margin-bottom: 20px;
+	border: 1px solid #000;
+}
+
+/*#######고객센터 안내 시작###########*/
+div#goods_center {
+	/* border: 1px solid #000; */
+	margin-bottom: 20px;
+}
+
+#goods_center>h1 {
+	padding: 20px 0 30px;
+	color: #666;
+}
+#goods_center>p>span {
+	font-weight: bold;
+	color: #666;
+}
+
+/* #goods_center>div#goods_inquiry {
+	border: 1px solid #000;
+} */
+#goods_center>#goods_inquiry>div.inquiryway {
+	flex: 1;
+	padding: 30px 0;
+}
+
+#goods_center>#goods_inquiry>.inquiryway>span {
+	font-weight: bold;
+	color: #5f0080;
+	font-size: 16px;
+}
+
+#goods_center>#goods_inquiry>.inquiryway>p.add_guide {
+	font-size: 13px;
+	color: #666;
+}
+
+/*#######후기게시판############*/
+#goods_center>table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#goods_center>table td {
+	border: 1px solid #000;
+}
+
+#goods_center>table#review th {
+	border: 1px solid #000;
+}

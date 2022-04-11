@@ -1,0 +1,199 @@
+@charset "UTF-8";
+@import url(../source/style_Reset.css);
+
+div#wrap{
+	width: 1200px;
+	border: 2px solid #eee;
+	
+}
+header#headerTmp{
+  display:block;
+  width: 100%;
+  text-align:center;
+
+ } 
+  div#headMenu{
+   font-weight: bold;
+/*   border: 1px solid #000; */
+   margin-left: 1000px;
+  }
+div#headMenu li{
+	margin: 5px;
+}
+ 
+  #wrap nav#headLNB>ul{
+  text-align:center;
+   padding-left: 400px;
+  }
+  
+  
+  #wrap nav#headLNB>ul>li{
+   margin: 15px;
+ 
+  }
+  
+  #wrap nav#headLNB>ul>li>a{
+/*   border: 1px solid #f80; */
+  }
+  
+  
+  main#main>div#mainlnb{
+  width: 200px;
+ /*  border: 1px solid #000; */
+  justify-content: center;
+  }
+main#main>div#mainlnb h2{
+  margin: 15px 0 20px;
+}  
+ main#main>div#mainlnb>nav#mainlnb_M{
+/*   border: 1px solid #000; */
+  width: 100%;
+  text-align: center;
+ } 
+  
+main#main>div#mainlnb>nav#mainlnb_M>ul{
+	width: 100%;
+    border: 3px solid #ccc;
+    border-bottom:none;
+	border-radius: 2px;
+}  
+#main>#mainlnb>#mainlnb_M>ul>li{
+	font-size: 18px;
+	line-height: 60px;
+	border-bottom: 1px solid #aaa;
+	font-weight: bold;
+} 
+ #main>#mainlnb>#mainlnb_M>ul>li>a{
+   display: inline-block;
+   width: 100%;
+  }
+  #main #mainlnb_M>ul>li.main_MLi:first-child{
+  background-color:#ddd;
+  }
+  #main #mainlnb_M>ul>li.main_MLi:hover>a{
+  background-color:#ddd;
+  }
+  
+  main#main>div#contents{
+/*   border: 1px solid #000; */
+  padding-left: 50px;
+  flex: 1;
+  }
+  
+  main#main>div#contents>h3{
+  margin-top: 15px;
+  }
+  
+  #main>#contents>table{
+  border: 1px solid #eee;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  }
+  #main>#contents>table td{
+  font-size: 19px;
+  border: 1px solid #ddd;
+  line-height: 30px;
+  
+  }
+  #main>#contents>table td:first-child{
+  width: 110px;
+
+  }
+  
+  #main>#contents>table td:nth-child(2){
+  width: 600px;
+  }
+  #main>#contents>table td:nth-child(3){
+  width: 60px;
+  }
+  hr.divisionline{
+  margin: 10px 0;
+  }
+  
+  #main>#contents>div#searchArea{
+  margin-top: 20px;
+   text-align: right;
+  }
+  #main>#contents ul{
+   margin-left: 400px;
+   margin-top: 20px;
+  
+  }
+    #main>#contents ul>li{
+    margin: 6px;
+    }
+    #main>#contents> ul>li:nth-child(2) {
+	font-weight: bold;
+    }
+     #main>#contents button#write{
+      display: inline-block;
+      margin-left: 840px;
+      font-size: 20px;
+      border: none;
+      border: 1px solid #bbb;
+      border-radius:4px ;
+      cursor: pointer;
+     
+     }
+   #main>#contents>#searchArea input,select,button{
+     font-size: 18px;
+     }
+#main>#contents>#searchArea button{
+	cursor: pointer;
+     
+}
+/*/////////////////////////////////////////////////////////////*/
+/*//////////////////* 1:1문의 CSS //////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+
+
+#wrap>form#frm>#main>#contents table#inquireTbl td:first-child{
+	width: 400px;
+	background-color: #f7f7f7;
+	margin: 10px;
+	font-size: 20px;
+	line-height: 75px;
+	
+}
+
+#wrap>form#frm>#main>#contents table#inquireTbl td select.selectinquire:last-child{
+   width: 200px;
+   text-align: center;
+   
+}
+
+#wrap>#main>#contents table#inquireTbl td textArea{
+	margin: 15px;
+
+}
+
+
+
+
+
+
+
+#main>#contents>div#inquire{
+	/*  border: 1px solid #000;*/
+    padding-left: 380px;
+    margin-top: 30px;
+}
+
+
+#main>#contents>div#inquire>button{
+  width: 100px;
+ display: inline-block;
+ border: none;
+ cursor:pointer;
+ font-size: 20px;
+  border: 1px solid #ddd;
+  background-color:#eee;
+  border-radius: 5px;
+}
+
+
+
+
+
