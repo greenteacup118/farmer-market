@@ -66,7 +66,6 @@ form#memberFrm table button {
 	cursor: pointer;
 }
 
-
 form#memberFrm table tr.beforeAddr button.addrBtn {
 	width: 370px;
 	padding: 13px 15px;
@@ -116,7 +115,6 @@ tr#afterId, tr#afterPw, tr#afterPwChk, tr#afterPhone, tr.afterAddr {
 	display: none;
 }
 /* -------------------------클릭시 보이도록-------------------------- */
-
 form#memberFrm table tr#afterId td div, tr#afterPw td div, tr#afterPwChk td div,
 	tr.afterAddr td div {
 	margin: 7px 16px;
@@ -332,7 +330,7 @@ div.dimmed::after {
 	height: 700px;
 	position: absolute;
 	overflow: scroll;
-	top: 140%;
+	top: 110%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	min-width: 300px;
@@ -403,4 +401,39 @@ div.dimmed::after {
 
 /* --------------------------------------------------------------------------- */
 /* ----------------------------joinAgreement 끝 --------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ----------------------------idCheck 시작 --------------------------------- */
+/* --------------------------------------------------------------------------- */
+div#idCheck {
+	text-align: center;
+	height: 240px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+
+#idCheck p {
+	font-size: 20px;
+}
+
+#idCheck p span {
+	font-weight: bold;
+}
+
+#idCheck button {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px 15px;
+	margin-top: 20px;
+	color: #fff;
+	background-color: #5f0080;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------idCheck 끝 --------------------------------- */
 /* --------------------------------------------------------------------------- */

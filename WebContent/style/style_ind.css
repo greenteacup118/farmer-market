@@ -76,7 +76,34 @@ div#header-Logo {
 }
 
 div#header-bot {
-	justify-content: flex-end;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0 10px;
+	border-bottom: 1px solid #eee;
+}
+
+#header-bot div#header-GNB {
+	flex: 1;
+	margin: 0 130px;
+}
+
+#header-bot div#header-GNB ul#gnbUl li.gnbLi {
+	flex: 1;
+	text-align: center;
+	padding: 3px 0;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+#header-bot div#header-GNB ul#gnbUl li.gnbLi:hover a{
+	text-decoration: underline;
+}
+
+#header-bot div#header-GNB ul#gnbUl li.gnbLi a {
+	display: inline-block;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
 }
 
 #header-bot div#searchDiv {
@@ -100,11 +127,9 @@ div#header-bot {
 	height: 15px;
 	background-color: rgba(255, 255, 255, 0);
 	font-size: 17px;
-}
-
-#searchDiv button#searchBtn:hover {
 	cursor: pointer;
 }
+
 
 div#shortCut div#wishList {
 	font-size: 20px;

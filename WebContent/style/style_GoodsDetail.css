@@ -88,7 +88,7 @@ div#detail_info {
 /*####### 최종가격, 장바구니#######*/
 #detail_info>table td#totalPrice {
 	text-align: right;
-	padding: 30px 40px 10px 40px;
+	padding: 30px 0 10px 0;
 }
 
 #detail_info>table td#totalPrice>span {
@@ -112,8 +112,8 @@ div#detail_info {
 	font-size: 14px;
 	font-weight: bold;
 	color: #fff;
-	padding-right: 30px;
-	width: 90%;
+	/* padding-right: 30px; */
+	width: 100%;
 	height: 100%;
 	background-color: #5f0081;
 	border: none;
@@ -124,6 +124,11 @@ div#detail_info {
 	cursor: pointer;
 }
 
+
+div#goods_contents {
+	/* border: 1px solid #000; */
+	margin: 0 50px;
+}
 
 /*######큌메뉴 시작######## */
 nav#quickmenu {
@@ -153,7 +158,7 @@ nav#quickmenu {
 
 /*##### 상세설명 구간 시작 ########*/
 div#explain_goods {
-	margin-bottom: 20px;
+	margin-bottom: 70px;
 	border: 1px solid #000;
 }
 
@@ -172,9 +177,10 @@ div#goods_center {
 	color: #666;
 }
 
-/* #goods_center>div#goods_inquiry {
-	border: 1px solid #000;
-} */
+#goods_center>div#goods_inquiry {
+	/* border: 1px solid #000; */
+	padding: 40px 0 0 130px;
+}
 #goods_center>#goods_inquiry>div.inquiryway {
 	flex: 1;
 	padding: 30px 0;
@@ -197,10 +203,203 @@ div#goods_center {
 	width: 100%;
 }
 
-#goods_center>table td {
+/* #goods_center>table td {
 	border: 1px solid #000;
-}
+} */
 
 #goods_center>table#review th {
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
+	height: 50px;
 }
+
+#goods_center>table#review {
+	margin: 70px 0 170px;
+}
+
+#goods_center>table#review th.reviewHead {
+	padding: 10px 0;
+}
+
+#goods_center>table#review th.reviewHead:first-child {
+	text-align: left;
+	vertical-align: top;
+}
+
+#goods_center>table#review th.reviewHead:nth-child(2) {
+	text-align: right;
+}
+
+#goods_center>table#review th.reviewHead p>span {
+	text-decoration: underline;
+}
+
+#goods_center>table#review th.reviewHead select {
+	height: 30px;
+	border: none;
+	border: 1px solid #666;
+}
+
+#goods_center>table#review th.thTit {
+	border-top: 2px solid #5f0080;
+	border-bottom: 1px solid #eee;
+}
+
+#goods_center>table#review th.thTit:not(:nth-child(2)) {
+	width: 90px;
+}
+
+
+
+
+/*####### 후기 펼치기용 테이블 #########*/
+#goods_center>table#review td.hiddenRivew {
+	padding: 20px 70px;
+	text-align: left;
+	background-color: #fafafa;
+	display: none;
+}
+#goods_center>table#review td.hiddenRivew:hover {
+	background-color: #fafafa;
+}
+
+/*############################*/
+
+
+
+
+#goods_center>table#review tbody tr:not(:last-child)>td {
+	border-bottom: 1px solid #eee;
+}
+
+#goods_center>table#review td {
+	text-align: center;
+}
+
+#goods_center>table#review td:nth-child(2) {
+	text-align: left;
+}
+
+#goods_center>table#review td#reviewBtnArea {
+	text-align: right;
+	border-top: 1px solid #5f0080;
+	padding-top: 30px;
+}
+
+#goods_center>table#review td#reviewBtnArea>button {
+	border: none;
+	border: 1px solid #000;
+	width: 130px;
+	height: 30px;
+	color: #fff;
+	background-color: #5f0080;
+}
+
+#goods_center>table#review td#reviewBtnArea>button:hover {
+	cursor: pointer;
+}
+
+/*###### 후기 게시판 이동 번호 버튼 ######## */
+
+#goods_center>table#review td>div.pageBtn {
+	/* border: 1px solid #000; */
+	display: inline-block;
+	text-align: center;
+}
+
+#goods_center>table#review td>div.pageBtn>button {
+	border: none;
+	border: 1px solid #dddfe1;
+	background-color: #fff;
+	width: 30px;
+	font-size: 20px;
+}
+
+#goods_center>table#review td>div.pageBtn>button:hover {
+	cursor: pointer;
+	background-color: #f7f7f7;
+	color: #5f0080;
+}
+
+
+
+/*##########QnA 게시판 시작########### */
+
+/* #goods_center>table#qaTbl>* {
+	border: 1px solid #000;
+} */
+
+#goods_center>table#qaTbl {
+	margin: 70px 0 170px;
+}
+
+#goods_center>table#qaTbl th {
+	/* border: 1px solid #000; */
+	height: 50px;
+}
+
+#goods_center>table#qaTbl tr:first-child>th {
+	text-align: left;
+	vertical-align: top;
+	padding-bottom: 30px;
+}
+
+#goods_center>table#qaTbl tr:nth-child(2) th{
+	border-top: 2px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+
+#goods_center>table#qaTbl th>p>span {
+	text-decoration: underline;
+}
+
+#goods_center>table#qaTbl th.thTit {
+	border-top: 2px solid #5f0080;
+	border-bottom: 1px solid #eee;
+}
+
+#goods_center>table#qaTbl tbody tr>td {
+	/* border: 1px solid #000; */
+	border-bottom: 1px solid #eee;
+	text-align: center;
+}
+#goods_center>table#qaTbl tbody tr>td:first-child {
+	cursor: pointer;
+}
+
+#goods_center>table#qaTbl tbody tr>td:nth-child(2) {
+	padding-right: 10px;
+}
+#goods_center>table#qaTbl tfoot td {
+	text-align: right;
+	padding-top: 20px;
+}
+#goods_center>table#qaTbl tfoot td button {
+	width: 100px;
+	height: 50px;
+	border: none;
+	border-radius: 4px;
+	background-color: #5f0080;
+	color: #fff;
+}
+#goods_center>table#qaTbl tfoot td button:hover {
+	cursor: pointer;
+}
+
+
+
+/*####### QnA 펼치기용 테이블 #########*/
+#goods_center>table#qaTbl td.hiddenRivew {
+	background-color: #fafafa;
+	display: none;
+}
+#goods_center>table#qaTbl td.hiddenRivew>div {
+	padding: 20px 70px;
+	text-align: left;
+}
+
+#goods_center>table#qaTbl td.hiddenRivew>div h1 {
+	padding-bottom: 20px;
+}
+
+/*############################*/

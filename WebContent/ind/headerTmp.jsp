@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%
+request.setCharacterEncoding("UTF-8");
+String session_id = (String) session.getAttribute("idKey");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,12 +25,26 @@
 				<!-- 로그인 이후에는 마이페이지, 로그아웃, 고객센터로 변경 -->
 				<!------------------------------------------------------->
 
-
 				<!-- 회원가입 이동 -->
+				<%
+				if (session_id == null) {
+					// 비로그인 상태일 때
+				%>
 				<li class="mainLi"><a href="/member/member.jsp">회원가입</a></li>
 				<li class="mainLi">|</li>
 				<!-- 로그인 페이지 이동 -->
 				<li class="mainLi"><a href="/member/login.jsp">로그인</a></li>
+				<%
+				} else {
+				// 로그인 상태일 때
+				%>
+				<li class="mainLi"><a href="/myPage/orderList.jsp">마이페이지</a></li>
+				<li class="mainLi">|</li>
+				<!-- 로그인 페이지 이동 -->
+				<li class="mainLi"><a href="/member/logout.jsp">로그아웃</a></li>
+				<%
+				}
+				%>
 				<li class="mainLi">|</li>
 				<!-- 고객센터 이동 -->
 				<li class="mainLi"><a href="/infoCenter/notice.jsp"> 고객센터 ▼</a>
@@ -56,35 +73,47 @@
 
 		<!--------- header하단 : LNB, 검색기능, 찜목록, 장바구니 --------->
 		<div id="header-bot" class="dFlex">
-			<!-- 검색 텍스트 입력 -->
-			<div id="searchDiv">
-				<input type="text" id="searchInput" name="search"
-					placeholder="검색어를 입력해주세요.">
-				<button type="button" id="searchBtn">
-					<i class="fa fa-fw fa-search"></i>
-				</button>
+			<div id="header-GNB">
+				<ul id="gnbUl" class="dFlex">
+					<li class="gnbLi"><a href="#">채소</a></li>
+					<li class="gnbLi"><a href="#">과일</a></li>
+					<li class="gnbLi"><a href="#">해산물</a></li>
+					<li class="gnbLi"><a href="#">육류</a></li>
+				</ul>
 			</div>
-			<!-- div#searchDiv -->
 
-			<!-- 찜목록, 장바구니 바로가기 아이콘 -->
-			<div id="shortCut" class="dFlex">
-				<div id="wishList">
-					<!-- ★★★★★★★★★ 찜한 목록 url 새로 설정 ★★★★★★★★★★★ -->
-					<a href="/myPage/wishList.jsp"> <i class="fa fa-fw fa-heart"></i></a>
+			<!-- 검색 텍스트 입력 -->
+			<div id="header-util" class="dFlex">
+				<div id="searchDiv">
+					<input type="text" id="searchInput" name="search"
+						placeholder="검색어를 입력해주세요.">
+					<button type="button" id="searchBtn">
+						<i class="fa fa-fw fa-search"></i>
+					</button>
 				</div>
-				<!-- 찜목록 -->
-				<div id="basket">
-					<a href="/goods/goods_basket.jsp"><i class="fa fa-fw fa-shopping-cart"></i></a>
+				<!-- div#searchDiv -->
+
+				<!-- 찜목록, 장바구니 바로가기 아이콘 -->
+				<div id="shortCut" class="dFlex">
+					<div id="wishList">
+						<a href="/myPage/wishList.jsp"> <i class="fa fa-fw fa-heart"></i></a>
+					</div>
+					<!-- 찜목록 -->
+					<div id="basket">
+						<a href="/goods/goods_basket.jsp"><i
+							class="fa fa-fw fa-shopping-cart"></i></a>
+					</div>
+					<!-- 장바구니 -->
 				</div>
-				<!-- 장바구니 -->
+				<!-- div#shortCut.dFlex -->
 			</div>
-			<!-- div#shortCut.dFlex -->
+			<!-- div#header-util -->
 		</div>
 		<!--------------------- div#header-bot .dFLEX --------------------->
 	</div>
 	<!-- div#header -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="/script/script_ind.js"></script>
+	<script src="/script/script_member.js"></script>
 </body>
 </html>

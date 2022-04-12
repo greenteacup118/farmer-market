@@ -74,9 +74,9 @@
 									<td class="goods_txt">구매수량</td>
 									<td>
 										<div class="cntBtn">
-											<button type="button">-</button>
+											<button type="button" id="cntMinus">-</button>
 											<input type="text" value="1" readonly>
-											<button type="button">+</button>
+											<button type="button" id="cntPlus">+</button>
 										</div>
 									</td>
 								</tr>
@@ -194,8 +194,19 @@
 							<table id="review">
 								<thead>
 									<tr>
-										<th colspan="5">
+										<th colspan="4" class="reviewHead">
 											<span>PRODUCT REVIEW</span>
+											<br><br>
+											<p>
+												- 상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른
+												글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.
+											</p>
+											<p>
+												- 배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이페이지
+												내 <span>1:1문의</span>에 남겨주세요.
+											</p>
+										</th>
+										<th class="reviewHead">
 											<select>
 												<option>최근 등록일순</option>
 												<option>조회많은순</option>
@@ -203,11 +214,11 @@
 										</th>
 									</tr>
 									<tr>
-										<th>번호</th>
-										<th>제목</th>
-										<th>작성자</th>
-										<th>작성일</th>
-										<th>조회</th>
+										<th class="thTit">번호</th>
+										<th class="thTit">제목</th>
+										<th class="thTit">작성자</th>
+										<th class="thTit">작성일</th>
+										<th class="thTit">조회</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -218,6 +229,15 @@
 										<td>2022-02-28</td>
 										<td>152</td>
 									</tr>
+									<tr>
+										<td colspan="5" class="hiddenRivew">
+											처음 주문해 봤는데 정말 맛있어요 강추드립니다.
+										</td>
+									</tr>
+									<!-- 
+										게시판 번호 반환 받아서 클래스명에 입력 후 해당 번호 게시글
+										클릭시 펼쳐지도록 설정 
+									-->
 									<tr>
 										<td>3</td>
 										<td>신선해요</td>
@@ -242,50 +262,96 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<td colspan="5"><button type="button">후기쓰기</button></td>
+										<td colspan="5" id="reviewBtnArea"><button type="button" id="reviewBtn">후기쓰기</button></td>
 									</tr>
 									<tr>
 										<td colspan="5">
-											<button type="button">&lt;</button>
-											<button type="button">1</button>
-											<button type="button">&gt;</button>
+											<div class="pageBtn">
+												<button type="button">&lt;</button>
+												<button type="button">1</button>
+												<button type="button">&gt;</button>
+											</div>
 										</td>
 									</tr>
 								</tfoot>
 							</table>
 							<!-- ########후기 테이블 끝 ######### -->
 							
+							
+							
+							
 							<hr id="topQna" class="sepLine">
+							
+							
 							
 							<!-- ######### Q&A 테이블 시작 ######### -->
 							<table id="qaTbl">
-								<caption>
-									<span>PRODUCT Q&amp;A</span>
-								</caption>
 								<thead>
 									<tr>
-										<td>제목</td>
-										<td>작성자</td>
-										<td>작성일</td>
+										<th colspan="4">
+											<span>PRODUCT Q&amp;A</span>
+											<br><br>
+											<p>
+												- 상품에 대한 문의를 남기는 공간입니다. 해당 게시판의
+												성격과 다른 글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.
+											</p>
+											<p>
+												- 배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리
+												내 <span>1:1문의</span>에 남겨주세요.
+											</p>
+										</th>
+									</tr>
+									<tr>
+										<th>번호</th>
+										<th>제목</th>
+										<th>작성자</th>
+										<th>작성일</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
+										<td>4</td>
 										<td>상품 상태에 관해 질문이 있습니다.</td>
 										<td>이*유</td>
 										<td>2022-03-23</td>
 									</tr>
 									<tr>
+										<td colspan="4" class="hiddenRivew">
+											<div id="customerQ">
+												<h1>
+													Q. 상품이 녹아서 배송된것 같습니다.
+												</h1>
+												<p>
+													안녕하세요 오늘 상품을 받아보니 냉동제품인데 녹아서
+													배송이 되었더라고요 교환 가능할까요?
+												</p>
+											</div>
+											<div id="managerA">
+												<h1>
+													A. Love food, Love life!
+												</h1>
+												<p>
+													안녕하세요. farmersmarket 입니다
+													<br>
+													배송에 문제를 드려 죄송합니다. 신속하게 교체해 드리겠습니다.
+												</p>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
 										<td>할인 기간에 대해서</td>
 										<td>김*조</td>
 										<td>2022-01-05</td>
 									</tr>
 									<tr>
+										<td>2</td>
 										<td>환불</td>
 										<td>허*수</td>
 										<td>2021-08-27</td>
 									</tr>
 									<tr>
+										<td>1</td>
 										<td>정기배송 신청 여부</td>
 										<td>김*국</td>
 										<td>2020-05-05</td>
@@ -293,7 +359,7 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<td colspan="3"><button type="button">문의하기</button></td>
+										<td colspan="4"><button type="button">문의하기</button></td>
 									</tr>
 								</tfoot>
 							</table>

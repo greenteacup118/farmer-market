@@ -19,14 +19,14 @@
 	<div id="wrap">
 		<jsp:include page="/ind/headerTmp.jsp" />
 		<main id="login">
-			<form id="loginFrm" method="post">
+			<form id="loginFrm" method="post" action="/member/loginProc.jsp">
 				<table>
 					<tbody>
 						<tr id="title">
 							<td>로그인</td>
 						</tr>
 						<tr>
-							<td><input id="idInput" type="text" name="uId"
+							<td><input id="login_idInput" type="text" name="uId"
 								placeholder="아이디를 입력해주세요"></td>
 						</tr>
 						<tr>

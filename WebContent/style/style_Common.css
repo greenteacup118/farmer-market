@@ -1,199 +1,281 @@
 @charset "UTF-8";
+
 @import url(../source/style_Reset.css);
 
-div#wrap{
+div#wrap {
 	width: 1200px;
-	border: 2px solid #eee;
-	
 }
-header#headerTmp{
-  display:block;
-  width: 100%;
-  text-align:center;
 
- } 
-  div#headMenu{
-   font-weight: bold;
-/*   border: 1px solid #000; */
-   margin-left: 1000px;
-  }
-div#headMenu li{
+/* --------------------------------------------------------------------------- */
+/* ------------------------------- index.jsp 시작 ---------------------------- */
+/* --------------------------------------------------------------------------- */
+main#index {
+	margin: 0 auto;
+	width: 1600px;
+}
+
+/* Slideshow container */
+div#mainSlide .slideshow-container {
+	max-width: 1600px;
+	position: relative;
+	margin: auto;
+}
+
+/* Hide the images by default */
+div#mainSlide .mySlides {
+	display: none;
+}
+
+/* Next & previous buttons */
+div#mainSlide .prev, div#mainSlide .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: 63px;
+	margin-top: -22px;
+	margin-left: 10px; padding : 15px 17px 15px 15px;
+	color: #fff;
+	background-color: rgba(212, 212, 212, 0.7);
+	border-radius: 50%;
+	font-weight: bold;
+	font-size: 21px;
+	transition: 0.6s ease;
+	text-align: center;
+	user-select: none;
+	padding: 15px 17px 15px 15px;
+}
+
+/* Position the "next button" to the right */
+div#mainSlide .next {
+	right: 0;
+	margin-right: 10px;
+	padding: 15px 15px 15px 17px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+div#mainSlide .prev:hover, div#mainSlide .next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+div#mainSlide .text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+/* Number text (1/3 etc) */
+div#mainSlide .numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	background-color: rgba(212, 212, 212, 0.7);
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 13px;
+}
+
+/* The dots/bullets/indicators */
+div#mainSlide .dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+div#mainSlide .active, div#mainSlide .dot:hover {
+	background-color: #717171;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------- index.jsp 끝 ------------------------------ */
+/* --------------------------------------------------------------------------- */
+header#headerTmp {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+div#headMenu {
+	font-weight: bold;
+	/*   border: 1px solid #000; */
+	margin-left: 1000px;
+}
+
+div#headMenu li {
 	margin: 5px;
 }
- 
-  #wrap nav#headLNB>ul{
-  text-align:center;
-   padding-left: 400px;
-  }
-  
-  
-  #wrap nav#headLNB>ul>li{
-   margin: 15px;
- 
-  }
-  
-  #wrap nav#headLNB>ul>li>a{
-/*   border: 1px solid #f80; */
-  }
-  
-  
-  main#main>div#mainlnb{
-  width: 200px;
- /*  border: 1px solid #000; */
-  justify-content: center;
-  }
-main#main>div#mainlnb h2{
-  margin: 15px 0 20px;
-}  
- main#main>div#mainlnb>nav#mainlnb_M{
-/*   border: 1px solid #000; */
-  width: 100%;
-  text-align: center;
- } 
-  
-main#main>div#mainlnb>nav#mainlnb_M>ul{
+
+#wrap nav#headLNB>ul {
+	text-align: center;
+	padding-left: 400px;
+}
+
+#wrap nav#headLNB>ul>li {
+	margin: 15px;
+}
+
+main#main>div#mainlnb {
+	width: 200px;
+	/*  border: 1px solid #000; */
+	justify-content: center;
+}
+
+main#main>div#mainlnb h2 {
+	margin: 15px 0 20px;
+}
+
+main#main>div#mainlnb>nav#mainlnb_M {
+	/*   border: 1px solid #000; */
 	width: 100%;
-    border: 3px solid #ccc;
-    border-bottom:none;
+	text-align: center;
+}
+
+main#main>div#mainlnb>nav#mainlnb_M>ul {
+	width: 100%;
+	border: 3px solid #ccc;
+	border-bottom: none;
 	border-radius: 2px;
-}  
-#main>#mainlnb>#mainlnb_M>ul>li{
+}
+
+#main>#mainlnb>#mainlnb_M>ul>li {
 	font-size: 18px;
 	line-height: 60px;
 	border-bottom: 1px solid #aaa;
 	font-weight: bold;
-} 
- #main>#mainlnb>#mainlnb_M>ul>li>a{
-   display: inline-block;
-   width: 100%;
-  }
-  #main #mainlnb_M>ul>li.main_MLi:first-child{
-  background-color:#ddd;
-  }
-  #main #mainlnb_M>ul>li.main_MLi:hover>a{
-  background-color:#ddd;
-  }
-  
-  main#main>div#contents{
-/*   border: 1px solid #000; */
-  padding-left: 50px;
-  flex: 1;
-  }
-  
-  main#main>div#contents>h3{
-  margin-top: 15px;
-  }
-  
-  #main>#contents>table{
-  border: 1px solid #eee;
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  }
-  #main>#contents>table td{
-  font-size: 19px;
-  border: 1px solid #ddd;
-  line-height: 30px;
-  
-  }
-  #main>#contents>table td:first-child{
-  width: 110px;
+}
 
-  }
-  
-  #main>#contents>table td:nth-child(2){
-  width: 600px;
-  }
-  #main>#contents>table td:nth-child(3){
-  width: 60px;
-  }
-  hr.divisionline{
-  margin: 10px 0;
-  }
-  
-  #main>#contents>div#searchArea{
-  margin-top: 20px;
-   text-align: right;
-  }
-  #main>#contents ul{
-   margin-left: 400px;
-   margin-top: 20px;
-  
-  }
-    #main>#contents ul>li{
-    margin: 6px;
-    }
-    #main>#contents> ul>li:nth-child(2) {
+#main>#mainlnb>#mainlnb_M>ul>li>a {
+	display: inline-block;
+	width: 100%;
+}
+
+#main #mainlnb_M>ul>li.main_MLi:first-child {
+	background-color: #ddd;
+}
+
+#main #mainlnb_M>ul>li.main_MLi:hover>a {
+	background-color: #ddd;
+}
+
+main#main>div#contents {
+	/*   border: 1px solid #000; */
+	padding-left: 50px;
+	flex: 1;
+}
+
+main#main>div#contents>h3 {
+	margin-top: 15px;
+}
+
+#main>#contents>table {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#main>#contents>table td {
+	font-size: 19px;
+	border: 1px solid #ddd;
+	line-height: 30px;
+}
+
+#main>#contents>table td:first-child {
+	width: 110px;
+}
+
+#main>#contents>table td:nth-child(2) {
+	width: 600px;
+}
+
+#main>#contents>table td:nth-child(3) {
+	width: 60px;
+}
+
+hr.divisionline {
+	margin: 10px 0;
+}
+
+#main>#contents>div#searchArea {
+	margin-top: 20px;
+	text-align: right;
+}
+
+#main>#contents ul {
+	margin-left: 400px;
+	margin-top: 20px;
+}
+
+#main>#contents ul>li {
+	margin: 6px;
+}
+
+#main>#contents>ul>li:nth-child(2) {
 	font-weight: bold;
-    }
-     #main>#contents button#write{
-      display: inline-block;
-      margin-left: 840px;
-      font-size: 20px;
-      border: none;
-      border: 1px solid #bbb;
-      border-radius:4px ;
-      cursor: pointer;
-     
-     }
-   #main>#contents>#searchArea input,select,button{
-     font-size: 18px;
-     }
-#main>#contents>#searchArea button{
+}
+
+#main>#contents button#write {
+	display: inline-block;
+	margin-left: 840px;
+	font-size: 20px;
+	border: none;
+	border: 1px solid #bbb;
+	border-radius: 4px;
 	cursor: pointer;
-     
+}
+
+#main>#contents>#searchArea input, select, button {
+	font-size: 18px;
+}
+
+#main>#contents>#searchArea button {
+	cursor: pointer;
 }
 /*/////////////////////////////////////////////////////////////*/
 /*//////////////////* 1:1문의 CSS //////////////////////////*/
 /*/////////////////////////////////////////////////////////////*/
-
-
-#wrap>form#frm>#main>#contents table#inquireTbl td:first-child{
+#wrap>form#frm>#main>#contents table#inquireTbl td:first-child {
 	width: 400px;
 	background-color: #f7f7f7;
 	margin: 10px;
 	font-size: 20px;
 	line-height: 75px;
-	
 }
 
-#wrap>form#frm>#main>#contents table#inquireTbl td select.selectinquire:last-child{
-   width: 200px;
-   text-align: center;
-   
+#wrap>form#frm>#main>#contents table#inquireTbl td select.selectinquire:last-child
+	{
+	width: 200px;
+	text-align: center;
 }
 
-#wrap>#main>#contents table#inquireTbl td textArea{
+#wrap>#main>#contents table#inquireTbl td textArea {
 	margin: 15px;
-
 }
 
-
-
-
-
-
-
-#main>#contents>div#inquire{
+#main>#contents>div#inquire {
 	/*  border: 1px solid #000;*/
-    padding-left: 380px;
-    margin-top: 30px;
+	padding-left: 380px;
+	margin-top: 30px;
 }
 
-
-#main>#contents>div#inquire>button{
-  width: 100px;
- display: inline-block;
- border: none;
- cursor:pointer;
- font-size: 20px;
-  border: 1px solid #ddd;
-  background-color:#eee;
-  border-radius: 5px;
+#main>#contents>div#inquire>button {
+	width: 100px;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	border: 1px solid #ddd;
+	background-color: #eee;
+	border-radius: 5px;
 }
-
-
-
-
-

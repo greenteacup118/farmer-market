@@ -117,8 +117,5 @@
 		<div>&copy;Farmer Market CORP.ALL RIGHTS RESERVED</div>
 	</div>
 	<!-- div#footer-copyright -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="/script/script_ind.js"></script>
 </body>
 </html>

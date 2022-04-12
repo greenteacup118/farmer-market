@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style/style_GoodsBasket.css">
     <link rel="stylesheet" href="/style/style_Template.css">
     <script src="/source/jquery-3.6.0.min.js"></script>
-    <script src="/script/script.js"></script>
+    <script src="/script/script_goodsBasket.js"></script>
 </head>
 <body>
   <div id="wrap">
@@ -80,9 +80,9 @@
 									</td>
 									<td>
 										<div class="cntBtn">
-											<button type="button">-</button>
+											<button type="button" id="cntM">-</button>
 											<input type="text" value="1" readonly>
-											<button type="button">+</button>
+											<button type="button" id="cntP">+</button>
 										</div>
 									</td>
 									<td>6,500원</td>
