@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%
+request.setCharacterEncoding("UTF-8");
+//메인페이지에서 장바구니 담기 버튼 클릭시 비로그인 상태일때 받는 값
+String to = request.getParameter("to");
+String with = request.getParameter("goodsCode");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -23,14 +28,18 @@
 				<table>
 					<tbody>
 						<tr id="title">
-							<td>로그인</td>
+							<td>
+								로그인
+								<input type="hidden" name="to" value="<%=to %>">
+								<input type="hidden" name="with" value="<%=with %>">
+							</td>
 						</tr>
 						<tr>
 							<td><input id="login_idInput" type="text" name="uId"
 								placeholder="아이디를 입력해주세요"></td>
 						</tr>
 						<tr>
-							<td><input id="pwInput" type="password" name="uId"
+							<td><input id="pwInput" type="password" name="uPw"
 								placeholder="비밀번호를 입력해주세요">
 								<button class="pwBtn" type="button">
 									<i class="fa fa-eye-slash"></i>
@@ -44,9 +53,9 @@
 											for="secChk">보안접속</label>
 									</div>
 									<ul id="findAccount" class="dFlex">
-										<li class="findLi"><a href="#">아이디 찾기</a></li>
+										<li class="findLi"><a href="/member/find_member.jsp?find=id">아이디 찾기</a></li>
 										<li class="findLi">|</li>
-										<li class="findLi"><a href="#">비밀번호 찾기</a></li>
+										<li class="findLi"><a href="/member/find_member.jsp?find=pw">비밀번호 찾기</a></li>
 									</ul>
 								</div>
 							</td>

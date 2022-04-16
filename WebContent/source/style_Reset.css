@@ -49,9 +49,8 @@ article, aside, footer {
 /* Reset */
 
 div#wrap {
-    width: 1200px;
+    width: 1900px;
     padding: 0px;
-    border: 1px solid #000;
     border-radius: 0px;
     margin: 0px auto;
 }

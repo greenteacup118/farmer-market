@@ -1,5 +1,42 @@
+<%@page import="pack_Goods.GoodsBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+String uId_Session = (String)session.getAttribute("uId_Session");
+%>    
+
+<jsp:useBean id="gBean" class="pack_Goods.GoodsDao" />
+
+
+<%
+request.setCharacterEncoding("UTF-8");
+
+
+
+
+
+String goodsCode = (String)request.getParameter("goodsCode"); // 제품코드명 전달 받음
+GoodsBean goodsList = gBean.selectGoodsOne(goodsCode);
+
+//true : 사용 가능, false : 사용 불가(중복)
+boolean result = gBean.checkBasket(goodsCode);
+
+String goodsImg = goodsList.getGoodsImg();
+int goodsPrice = goodsList.getGoodsPrice();
+String goodsName = goodsList.getGoodsName();
+String goodsCatch = goodsList.getGoodsCatch();
+String goodsWeigth = goodsList.getGoodsWeight();
+String goodsContentImg1 = goodsList.getContentImg1();
+String goodsContentImg2 = goodsList.getContentImg2();
+String goodsContentImg3 = goodsList.getContentImg3();
+int eventRate = goodsList.getEventRate();
+String deliType = goodsList.getDeliType();
+String unitType = goodsList.getUnitType();
+String packType = goodsList.getPackType();
+%>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -31,76 +68,90 @@
 		
 			<!-- ###### 사진 및 가격 표시 ########### -->
 			
+			
 			<div id="goods_wrap">
 			
 				<div id="goods_detail" class="dFlex">
 				
-					<div id="detailImg"><img src="/images/berry.jpg" alt="과일"></div>
-					<div id="detail_info">
+					<div id="detailImg"><img src="/images/<%=goodsImg %>" alt="<%=goodsName%>"></div>
 					
-						<!-- ##### 가격테이블 ######-->
-						<table>
-							<tbody>
-								<tr>
-									<td colspan="2" class="tdLine">
-										<h1>[농부목장] 수입산 크랜베리 300g</h1>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2" id="goods_catch" class="goods_txt tdLine">
-										상큼하고 달콤한 크랜베리!
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2" class="goods_price">6,500원</td>
-								</tr>
-								<tr>
-									<td class="goods_txt tdLine">판매단위</td>
-									<td class="tdLine">1팩</td>
-								</tr>
-								<tr>
-									<td class="goods_txt">중량/용량</td>
-									<td>300g내외</td>
-								</tr>
-								<tr>
-									<td class="goods_txt">배송구분</td>
-									<td>택배배송</td>
-								</tr>
-								<tr>
-									<td class="goods_txt">포장타입</td>
-									<td>냉장/스티로폼</td>
-								</tr>
-								<tr>
-									<td class="goods_txt">구매수량</td>
-									<td>
-										<div class="cntBtn">
-											<button type="button" id="cntMinus">-</button>
-											<input type="text" value="1" readonly>
-											<button type="button" id="cntPlus">+</button>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2" id="totalPrice">
-										총 상품금액 : <span class="goods_price">6,500원</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="goods_btnArea">
-										<a href="/myPage/wishList.jsp">
-											<i class="fa fa-fw fa-heart"></i>
-										</a>
-									</td>
-									<td class="goods_btnArea">
-										<a href="/goods/goods_basket.jsp">
-											<button type="button">장바구니 담기</button>
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<!-- div#detail_info -->
+					<form action="goods_basketProc.jsp" id="basketFrm" method="get">
+						<div id="detail_info">
+						
+							<!-- ##### 가격테이블 ######-->
+							<table>
+								<tbody>
+									<tr>
+										<td colspan="2" class="tdLine">
+											<h1><%=goodsName + " " + goodsWeigth %></h1>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" id="goods_catch" class="goods_txt tdLine">
+											<%=goodsCatch %>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" class="goods_price price"><%=goodsPrice %></td>
+									</tr>
+									<tr>
+										<td class="goods_txt tdLine">판매단위</td>
+										<td class="tdLine"><%=unitType %></td>
+									</tr>
+									<tr>
+										<td class="goods_txt">중량/용량</td>
+										<td><%=goodsWeigth %></td>
+									</tr>
+									<tr>
+										<td class="goods_txt">배송구분</td>
+										<td><%=deliType %></td>
+									</tr>
+									<tr>
+										<td class="goods_txt">포장타입</td>
+										<td><%=packType %></td>
+									</tr>
+									<tr>
+										<td class="goods_txt">구매수량</td>
+										<td>
+											<div class="cntBtn">
+												<button type="button" id="cntMinus">-</button>
+												<input type="text" value="1" readonly name="goodsCnt">
+												<button type="button" id="cntPlus">+</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" id="totalPrice">
+											총 상품금액 : <span class="goods_price price"><%=goodsPrice %></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="goods_btnArea">
+											<a href="/myPage/wishList.jsp">
+												<i class="fa fa-fw fa-heart"></i>
+											</a>
+										</td>
+										<td class="goods_btnArea">
+											<a href="#" id="basketA">
+												<button type="button" id="basketBtn">장바구니 담기</button>
+												<input type="hidden" value="<%=uId_Session%>" name="uId_Session" >
+												<input type="hidden"  value="<%=result%>">
+											</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+						<!-- div#detail_info -->
+						
+						<input type="hidden" name="goodsCode" value="<%=goodsCode%>">
+						<!-- 장바구니에 제품코드 전달용 -->
+						
+					</form>
+					<!-- form#basketFrm 구매수량, 제품코드 전달용 -->
+					
+					
 				</div>
 				<!-- div#goods_detail -->
 				
@@ -119,30 +170,12 @@
 					
 					<!--######## 상세설명 시작 ########## -->
 						<div id="explain_goods">
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요<br>
-						상세설명 내용을 입력해주세요
+							<img src="/images/<%=goodsContentImg1 %>" alt="<%=goodsName %>">
+							<img src="/images/<%=goodsContentImg2 %>" alt="<%=goodsName %>">
+							<img src="/images/<%=goodsContentImg3 %>" alt="<%=goodsName %>">
 						</div>
-						<!-- div#goods_detailInfo -->
+					
+						<!-- div#explain_goods -->
 						
 						<hr id="topCen" class="sepLine">
 						

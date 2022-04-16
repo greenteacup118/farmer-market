@@ -1,5 +1,15 @@
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.Vector"%>
+<%@page import="pack_Goods.GoodsBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<jsp:useBean id="gBean" class="pack_Goods.GoodsDao" />
+
+<%
+List<GoodsBean> goodsList = gBean.goodsTbl();	// 상품관련데이터 반환용 메서드 실행
+%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,7 +21,7 @@
     <link rel="stylesheet" href="/style/style_Goods.css">
     <link rel="stylesheet" href="/style/style_Template.css">
     <script src="/source/jquery-3.6.0.min.js"></script>
-    <script src="/script/script.js"></script>
+    <script src="/script/script_goods.js"></script>
 </head>
 <body>
   <div id="wrap">
@@ -29,52 +39,48 @@
 			
 			<h1 id="todayGoods">오늘의 품목</h1>
 			
+			<form action="goods_detail.jsp" id="codeFrm" method="get">
 			<div id="goodsList" class="dFlex">
-					<table>
-						<tbody>
-							<tr>
-								<td class="goodsImg"><a href="#"><img src="/images/berry.jpg" alt="과일"></a></td>
-							</tr>
-							<tr>
-								<td class="goodsTitle"><a href="#">[농부목장] 수입산 크랜베리 300g</a></td>
-							</tr>
-							<tr>
-								<td class="goodsPrice"><a href="#">6,500원</a></td>
-							</tr>
-						</tbody>
-					</table>
+			
+			<%
+				String goodsCode = null;
+				for(int i=0; i<goodsList.size(); i++) {
 					
-					<!-- DB 연결 후 지울 테이블 -->	
-					<table>
-						<tbody>
-							<tr>
-								<td class="goodsImg"><a href="#"><img src="/images/salmon.jpg" alt="과일"></a></td>
-							</tr>
-							<tr>
-								<td class="goodsTitle"><a href="#">[어부마을] 수입산 연어 150g</a></td>
-							</tr>
-							<tr>
-								<td class="goodsPrice"><a href="#">10,160원</a></td>
-							</tr>
-						</tbody>
-					</table>
+					GoodsBean goodsBean = goodsList.get(i);
 					
-					<table>
+					goodsCode = goodsBean.getGoodsCode(); 
+					String goodsImg = goodsBean.getGoodsImg(); 
+					String goodsName = goodsBean.getGoodsName();
+					int goodsPrice = goodsBean.getGoodsPrice();
+					
+					
+					
+					if(goodsCode.contains("V") ) {
+			%>
+					<table class="goodsList">
 						<tbody>
 							<tr>
-								<td class="goodsImg"><a href="#"><img src="/images/meat.jpg" alt="육류"></a></td>
+								<td class="goodsImg">
+									<a href="#">
+										<img src="/images<%=goodsImg %>" alt="<%=goodsName%>">
+									</a>
+								</td>
 							</tr>
 							<tr>
-								<td class="goodsTitle"><a href="#">[도축대장] 호주산 소고기 600g</a></td>
+								<td class="goodsTitle"><a href="#"><%=goodsName %></a></td>
 							</tr>
 							<tr>
-								<td class="goodsPrice"><a href="#">25,590원</a></td>
+								<td class="goodsPrice"><a href="#"><%=goodsPrice %></a></td>
 							</tr>
 						</tbody>
 					</table>
-					<!-- DB 연결 후 지울 테이블 -->
+				<%
+					}
+				}%>			
+			<input type="hidden" name="goodsCode" value="<%=goodsCode %>">
 			</div>
 			<!--  div#goodsList, 상품 목록 끝 -->
+			</form>
 			
 			
 			<!-- 상품 리스트 끝 -->

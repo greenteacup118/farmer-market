@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url(/source/style_Reset.css);
+@import url(/source/style_Reset_Goods.css);
+
 
 /*/////////////////////////////////////////////////////////////
 //////////////////////상품페이지 시작///////////////////////////
@@ -7,7 +8,10 @@
 
 /* div#goodsList 시작 */
 
-main#mian {
+
+main#main {
+	width: 1200px;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -19,14 +23,15 @@ h1#todayGoods {
 
 
 div#goodsList{
-	/* border: 1px solid #000; */
+	border: 1px solid #000;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 
 /* 상품 목록 테이블 시작 */
 #goodsList>table {
-	/* border: 1px solid #000; */
+	border: 1px solid #000;
 	border-collapse: collapse;
 	margin: 10px;
 }

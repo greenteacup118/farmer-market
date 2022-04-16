@@ -33,7 +33,8 @@ div#mainSlide .prev, div#mainSlide .next {
 	top: 50%;
 	width: 63px;
 	margin-top: -22px;
-	margin-left: 10px; padding : 15px 17px 15px 15px;
+	margin-left: 10px;
+	padding: 15px 17px 15px 15px;
 	color: #fff;
 	background-color: rgba(212, 212, 212, 0.7);
 	border-radius: 50%;
@@ -96,186 +97,120 @@ div#mainSlide .active, div#mainSlide .dot:hover {
 	background-color: #717171;
 }
 
+/* ---------------------------------------------------------------------------------- */
+/* ------------------------------- Main 상품 리스트 시작 ---------------------------- */
+main#index div.mainList {
+	width: 1200px;
+	margin: 150px auto;
+}
+
+main#index div.mainList div.goods_title {
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+	margin: 40px 0;
+}
+
+main#index div.mainList div.goods_container {
+	align-items: flex-start;
+	justify-content: center;
+	/* overflow: hidden; */
+}
+
+main#index div.mainList div.goods_container div.goods {
+	position: relative;
+	width: 360px;
+	margin: 0 15px;
+}
+
+div.mainList div.goods_container div.goods div.goodsImg, div.goodsImg {
+	overflow: hidden;
+	width: 360px;
+	height: 430px;
+}
+
+div.mainList div.goods_container div.goods div.goodsImg, div.goodsImg img
+	{
+	width: 360px;
+	cursor: pointer;
+	transition: transform .5s; /* Animation */
+}
+
+div.goodsImg img:hover {
+	transform: scale(1.1);
+}
+
+main#index div.mainList div.goods div.goodsBtn {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+div.goods div.goodsBtn {
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	transition: .4s;
+}
+
+div.goods div.goodsBtn:hover {
+	transform: scale(1.1);
+}
+
+main#index div.mainList div.goods div.goodsBtn i {
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 50%;
+	background-color: #725973;
+	font-size: 35px;
+	font-weight: bold;
+	color: #fff;
+}
+
+div.mainList div.goods div.goodsName {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 10px 0 0 5px;
+}
+
+div.mainList div.goods div.goodsCatch {
+	font-weight: normal;
+	font-size: 15px;
+	padding: 10px 0 0 5px;
+}
+
+div.mainList div.goods div.goodsPrice {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 10px 0 10px 5px;
+	color: #725973;
+}
+
+div.mainList div.goods div.goodsPrice span.salePer {
+	font-size: 13px;
+	color: #fa622f;
+}
+
+div.mainList div.goods div.goodsPrice span.price:after {
+	content: "원";
+}
+
+div.mainList div.goods div.beforePrice {
+	text-decoration: line-through;
+	color: #aaa;
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+div.mainList div.goods div.beforePrice:after {
+	content: "원";
+}
+
+/* ------------------------------- Main 상품 리스트 끝 ------------------------------ */
+/* ---------------------------------------------------------------------------------- */
+
 /* --------------------------------------------------------------------------- */
 /* ------------------------------- index.jsp 끝 ------------------------------ */
 /* --------------------------------------------------------------------------- */
-header#headerTmp {
-	display: block;
-	width: 100%;
-	text-align: center;
-}
-
-div#headMenu {
-	font-weight: bold;
-	/*   border: 1px solid #000; */
-	margin-left: 1000px;
-}
-
-div#headMenu li {
-	margin: 5px;
-}
-
-#wrap nav#headLNB>ul {
-	text-align: center;
-	padding-left: 400px;
-}
-
-#wrap nav#headLNB>ul>li {
-	margin: 15px;
-}
-
-main#main>div#mainlnb {
-	width: 200px;
-	/*  border: 1px solid #000; */
-	justify-content: center;
-}
-
-main#main>div#mainlnb h2 {
-	margin: 15px 0 20px;
-}
-
-main#main>div#mainlnb>nav#mainlnb_M {
-	/*   border: 1px solid #000; */
-	width: 100%;
-	text-align: center;
-}
-
-main#main>div#mainlnb>nav#mainlnb_M>ul {
-	width: 100%;
-	border: 3px solid #ccc;
-	border-bottom: none;
-	border-radius: 2px;
-}
-
-#main>#mainlnb>#mainlnb_M>ul>li {
-	font-size: 18px;
-	line-height: 60px;
-	border-bottom: 1px solid #aaa;
-	font-weight: bold;
-}
-
-#main>#mainlnb>#mainlnb_M>ul>li>a {
-	display: inline-block;
-	width: 100%;
-}
-
-#main #mainlnb_M>ul>li.main_MLi:first-child {
-	background-color: #ddd;
-}
-
-#main #mainlnb_M>ul>li.main_MLi:hover>a {
-	background-color: #ddd;
-}
-
-main#main>div#contents {
-	/*   border: 1px solid #000; */
-	padding-left: 50px;
-	flex: 1;
-}
-
-main#main>div#contents>h3 {
-	margin-top: 15px;
-}
-
-#main>#contents>table {
-	border: 1px solid #eee;
-	border-collapse: collapse;
-	width: 100%;
-	text-align: center;
-	margin-top: 20px;
-}
-
-#main>#contents>table td {
-	font-size: 19px;
-	border: 1px solid #ddd;
-	line-height: 30px;
-}
-
-#main>#contents>table td:first-child {
-	width: 110px;
-}
-
-#main>#contents>table td:nth-child(2) {
-	width: 600px;
-}
-
-#main>#contents>table td:nth-child(3) {
-	width: 60px;
-}
-
-hr.divisionline {
-	margin: 10px 0;
-}
-
-#main>#contents>div#searchArea {
-	margin-top: 20px;
-	text-align: right;
-}
-
-#main>#contents ul {
-	margin-left: 400px;
-	margin-top: 20px;
-}
-
-#main>#contents ul>li {
-	margin: 6px;
-}
-
-#main>#contents>ul>li:nth-child(2) {
-	font-weight: bold;
-}
-
-#main>#contents button#write {
-	display: inline-block;
-	margin-left: 840px;
-	font-size: 20px;
-	border: none;
-	border: 1px solid #bbb;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-#main>#contents>#searchArea input, select, button {
-	font-size: 18px;
-}
-
-#main>#contents>#searchArea button {
-	cursor: pointer;
-}
-/*/////////////////////////////////////////////////////////////*/
-/*//////////////////* 1:1문의 CSS //////////////////////////*/
-/*/////////////////////////////////////////////////////////////*/
-#wrap>form#frm>#main>#contents table#inquireTbl td:first-child {
-	width: 400px;
-	background-color: #f7f7f7;
-	margin: 10px;
-	font-size: 20px;
-	line-height: 75px;
-}
-
-#wrap>form#frm>#main>#contents table#inquireTbl td select.selectinquire:last-child
-	{
-	width: 200px;
-	text-align: center;
-}
-
-#wrap>#main>#contents table#inquireTbl td textArea {
-	margin: 15px;
-}
-
-#main>#contents>div#inquire {
-	/*  border: 1px solid #000;*/
-	padding-left: 380px;
-	margin-top: 30px;
-}
-
-#main>#contents>div#inquire>button {
-	width: 100px;
-	display: inline-block;
-	border: none;
-	cursor: pointer;
-	font-size: 20px;
-	border: 1px solid #ddd;
-	background-color: #eee;
-	border-radius: 5px;
-}

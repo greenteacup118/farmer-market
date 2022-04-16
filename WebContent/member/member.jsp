@@ -157,10 +157,10 @@
 						<tr>
 							<td>성별</td>
 							<td><label for="genderMInput"> <input
-									id="genderMInput" type="radio" name="uGender" value="m">
+									id="genderMInput" type="radio" name="uGender" value="1" checked>
 									남자
 							</label> <label for="genderWInput"> <input id="genderWInput"
-									type="radio" name="uGender" value="w"> 여자
+									type="radio" name="uGender" value="2"> 여자
 							</label> <label for="genderNInput"> <input id="genderNInput"
 									type="radio" name=uGender value="0"> 선택안함
 							</label></td>
@@ -171,12 +171,12 @@
 							<td>생년월일</td>
 							<td>
 								<div id="birthArea">
-									<input class="birthInput" type="text" maxlength="4"
-										placeholder="YYYY"> <span>/</span> <input
-										class="birthInput" type="text" maxlength="2" placeholder="MM">
-									<span>/</span> <input class="birthInput" type="text"
-										maxlength="2" placeholder="DD"> <input type="hidden"
-										id="birth" name="uBirth" />
+									<input class="birthInput" type="text" maxlength="4" placeholder="YYYY"> 
+									<span>/</span> 
+									<input class="birthInput" type="text" maxlength="2" placeholder="MM">
+									<span>/</span> 
+									<input class="birthInput" type="text" maxlength="2" placeholder="DD"> 
+									<input type="hidden" id="birth" name="uBirth" />
 								</div>
 							</td>
 

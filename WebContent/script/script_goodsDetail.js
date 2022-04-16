@@ -25,12 +25,11 @@ $(function(){
 			$(".cntBtn>input").val(cnt);
 		}
 	});
-
-	
 	
 
-	
-	
+
+
+
 		// 퀵메뉴 선택시 이동 기능
 	$("#quickmenu li:first-child").click(function(){
 		// 절대위치 계산
@@ -182,6 +181,31 @@ $(function(){
 		} else {
 			$(".hiddenRivew").hide();
 		}
+	});
+	
+		// 장바구니 버튼 기능 시작
+		
+	$("#basketBtn").click(function(){
+		let uSession = $(this).next().val();
+		//alert(uSession);
+		let basketChk = $(this).next().next().val();
+		//alert(basketChk);
+		
+		if(uSession == "null") {
+			alert("로그인이 필요한 서비스입니다.");
+		} else if(basketChk == "true") {
+			$("#basketFrm").submit();
+		} else {
+			alert("이미 장바구니에담긴 상품입니다.");
+		}
+	});
+	
+	
+		// 금액 기호 표시
+	$(".price").each(function(i, v) { 
+		let price = parseInt($(this).text());
+		price = price.toLocaleString()+" 원";
+		$(this).text(price);
 	});
 		
 	

@@ -4,16 +4,9 @@
 request.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="memberDao" class="pack_Member.MemberDao" />
-<jsp:useBean id="mBean" class="pack_Member.MemberBean" />
+<jsp:useBean id="mBean" class="pack_Member.MemberBean"/>
+<jsp:setProperty name="mBean" property="*"/>
 <%
-mBean.setuId(request.getParameter("uId"));
-mBean.setuPw(request.getParameter("uPw"));
-mBean.setuName(request.getParameter("uName"));
-mBean.setuEmail(request.getParameter("uEmail"));
-mBean.setuPhone(request.getParameter("uPhone"));
-mBean.setuAddr(request.getParameter("uAddr"));
-mBean.setuGender(request.getParameter("uGender"));
-mBean.setuBirth(request.getParameter("uBirth"));
 
 boolean result = memberDao.insertMember(mBean);
 if (result) {

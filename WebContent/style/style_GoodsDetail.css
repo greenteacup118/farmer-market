@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @import url(/source/style_Reset.css);
 
+main#main {
+	width: 1200px;
+	margin: 0 auto;
+}
 
 hr.sepLine {
 	margin-bottom: 20px;
@@ -23,11 +27,11 @@ div#detailImg> img {
 	height: 555px;
 }
 
-div#detail_info {
+form#basketFrm {
 	flex:1;
 }
 
-#detail_info>table {
+div#detail_info>table {
 	border-collapse: collapse;
 	margin: 0 20px 0 70px;
 	width: 90%;
@@ -128,6 +132,7 @@ div#detail_info {
 div#goods_contents {
 	/* border: 1px solid #000; */
 	margin: 0 50px;
+	flex-wrap: wrap;
 }
 
 /*######큌메뉴 시작######## */
