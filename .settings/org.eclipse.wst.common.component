@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Proj_farmerMarket">
+        
+    <wb-module deploy-name="Proj_farmerMarket_lhw">
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Proj_farmerMarket"/>
-        <property name="java-output-path" value="/Proj_farmerMarket/build/classes"/>
+                
+        <property name="java-output-path" value="/Proj_farmerMarket_lhw/build/classes"/>
+        <property name="context-root" value="Proj_farmerMarket_lhw"/>
+            
     </wb-module>
+    
 </project-modules>

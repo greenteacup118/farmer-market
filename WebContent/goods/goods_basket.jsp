@@ -21,6 +21,9 @@ MemberBean uDeli = deliInfo.selectMemberOne(uId_Session);
 String userDel = uDeli.getuAddr();
 List<BasketBean> basketList = gBean.basketInfo(uId_Session);
 // uId에 해당하는 데이터 반환
+if(basketList.size()==0){
+	response.sendRedirect("/goods/goods_basketNull.jsp");
+}
 %>
 
 
@@ -60,7 +63,7 @@ int deliPrice = 3000;
 		<%@ include file="/ind/headerTmp.jsp" %>
 		<!-- 헤더템플릿 끝 -->
 		
-		<form action="/index.jsp" id=basketFrm>
+		<form action="/goods/goods_orderProc.jsp" id=basketFrm>
 			<main id="main">
 				
 				<h1>장바구니</h1>
@@ -74,9 +77,9 @@ int deliPrice = 3000;
 							<tbody>
 								<tr>
 									<td><input id="chkAll1" type="checkbox"></td>
-									<td><span>전체선택</span></td>
+									<td><button type="button" class="allClickBtn"><span>전체선택</span></button></td>
 									<td><span>|</span></td>
-									<td><button type="button">선택삭제</button></td>
+									<td><button type="button" class="selClickBtn"><span>선택삭제</span></button></td>
 								</tr>
 							</tbody>
 						</table>
@@ -97,6 +100,7 @@ int deliPrice = 3000;
 								
 								
 								String goodsCode = basketBean.getGoodsCode();
+								
 								goodsCnt = basketBean.getGoodsCnt();
 								
 								GoodsBean bean = gBean.basketTbl(goodsCode);
@@ -120,10 +124,11 @@ int deliPrice = 3000;
 							<table class="myBasket">
 								<tbody>
 									<tr class="basketChk">
-										<td><input type="checkbox"></td>
+										<td><input type="checkbox" name="goodsCode[]" value="<%=goodsCode%>"></td>
 										<td class="gImg">
 											<a href="#"><img src="/images<%=goodsImg %>" alt="<%=goodsName%>"></a>
-											<input type="hidden" value="<%=goodsCode%>" name="goodsCode" >
+											<%-- <input type="hidden" value="<%=goodsCode%>" name="goodsCode"> --%>
+											<input type="hidden" value="<%=uId_Session%>" name="uId" >
 										</td> 
 										<!-- 이미지 클릭시 상품상세 페이지 이동 -->
 										<td class="gName">
@@ -136,16 +141,28 @@ int deliPrice = 3000;
 												<button type="button" class="cntP">+</button>
 											</div>
 										</td>
+									<%
+										int calc1 = goodsPrice*goodsCnt;
+										int calc2 = (int)(calc1*eventRate/100); 
+										int calc3 = calc1-calc2;
+									%>
 										<td id="priceArea">
-											<p class="price"><%=goodsPrice*goodsCnt %></p>
-											<input type="hidden" value="<%=goodsPrice%>">
 										<%if(eventRate>0) { %>
-											<input type="hidden" value="<%=eventRate%>">
+											<p class="price eventPrice"><%=calc1 %></p>
+											<p class="price eventPrice seEvent"><%=calc3 %></p>
+											<input type="hidden" value="<%=goodsPrice%>">
+										<%} else { %>
+											<p class="price"><%=calc1 %></p>
+											<input type="hidden" value="<%=goodsPrice%>">
 										<%} %>
+
 										</td>
 									</tr>
 								</tbody>
 							</table>
+										<%if(eventRate>0) { %>
+											<input type="hidden" value="<%=eventRate%>">
+										<%} %>
 							<%} %>
 							<!-- 하단 전체선택 / 선택삭제 버튼 영역 -->
 							<div class="contents_modify">
@@ -153,9 +170,9 @@ int deliPrice = 3000;
 									<tbody>
 										<tr>
 											<td><input id="chkAll2" type="checkbox"></td>
-											<td>전체선택</td>
-											<td>|</td>
-											<td><button type="button">선택삭제</button></td>
+											<td><button type="button" class="allClickBtn">전체선택</button></td>
+											<td><span>|</span></td>
+											<td><button type="button" class="selClickBtn">선택삭제</button></td>
 										</tr>
 									</tbody>
 								</table>
@@ -231,6 +248,9 @@ int deliPrice = 3000;
 				
 			</main>
 			<!-- main#main -->
+			
+			
+			
 		</form>
        
        <!-- 푸터템플릿 시작 -->

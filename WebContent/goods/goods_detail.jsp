@@ -123,6 +123,7 @@ String packType = goodsList.getPackType();
 									<tr>
 										<td colspan="2" id="totalPrice">
 											총 상품금액 : <span class="goods_price price"><%=goodsPrice %></span>
+											<input type="hidden" value="<%=goodsPrice%>">
 										</td>
 									</tr>
 									<tr>
@@ -141,6 +142,7 @@ String packType = goodsList.getPackType();
 									</tr>
 								</tbody>
 							</table>
+							<input type="hidden" value="<%=eventRate%>">
 							
 						</div>
 						<!-- div#detail_info -->

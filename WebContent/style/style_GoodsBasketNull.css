@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import url(/source/style_Reset.css);
+
+main#main {
+	width: 1200px;
+	/* border: 1px solid #000; */
+	margin: 0 auto;
+	text-align: center;
+}
+
+div#notice {
+	border: 2px solid #beb3ee;
+	border-radius: 4px;
+	display: inline-block;
+	margin: 100px;
+	padding: 30px;
+}
+
+div#notice p {
+	font-size: 25px;
+	padding-bottom: 40px;
+}
+
+div#notice button {
+	font-size: 20px;
+	border: none;
+	background-color: #beb3ee;
+	color: #fff;
+	padding: 10px;
+}
+
+div#notice button:hover {
+	cursor: pointer;
+}

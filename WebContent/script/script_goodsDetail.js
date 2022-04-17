@@ -20,9 +20,12 @@ $(function(){
 	});
 	
 	$("#cntMinus").click(function(){
-		if(parseInt($(".cntBtn>input").val()) > 1) {	
+		if(parseInt($(".cntBtn>input").val()) > 0) {	
 			let cnt = parseInt($(".cntBtn>input").val())-1;
 			$(".cntBtn>input").val(cnt);
+		} else {
+			let cnt = 0;
+			$(this).next().val(cnt);
 		}
 	});
 	
@@ -191,13 +194,18 @@ $(function(){
 		let basketChk = $(this).next().next().val();
 		//alert(basketChk);
 		
-		if(uSession == "null") {
+		let chk = confirm("장바구니에 물건을 담으시겠습니까?");
+		
+		if (chk) {
+			if(uSession == "null") {
 			alert("로그인이 필요한 서비스입니다.");
-		} else if(basketChk == "true") {
+			} else if(basketChk == "true") {
 			$("#basketFrm").submit();
-		} else {
+			} else {
 			alert("이미 장바구니에담긴 상품입니다.");
+			}			
 		}
+
 	});
 	
 	
@@ -208,6 +216,5 @@ $(function(){
 		$(this).text(price);
 	});
 		
-	
 	
 });

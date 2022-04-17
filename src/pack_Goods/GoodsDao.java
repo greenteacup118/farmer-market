@@ -312,7 +312,43 @@ public class GoodsDao {
 	
 	
 	
+	// 장바구니 삭제
+	public void deleteBasket(String uId, String goodsCode) {
+		String sql = null;
+		
+		try {
+			objConn = objPool.getConnection();
+			sql = "delete from basket where uId=? and goodsCode=?";
+			objPstmt = objConn.prepareStatement(sql);
+			objPstmt.setString(1, uId);
+			objPstmt.setString(2, goodsCode);
+			objPstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			objPool.freeConnection(objConn, objPstmt, objRS);
+		}
+	}
 	
+	
+	// 주문완료시 장바구니 목록 삭제
+	public void orderCom(String uId) {
+		String sql = null;
+		
+		try {
+			objConn = objPool.getConnection();
+			sql = "delete from basket where uId=?";
+			objPstmt = objConn.prepareStatement(sql);
+			objPstmt.setString(1, uId);
+			objPstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			objPool.freeConnection(objConn, objPstmt, objRS);
+		}
+	}
 	
 	
 	

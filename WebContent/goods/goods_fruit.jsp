@@ -75,6 +75,7 @@ List<GoodsBean> goodsList = gBean.goodsTbl();	// 상품관련데이터 반환용
 						</tbody>
 					</table>
 					<input type="hidden" name="goodsCode" value="<%=goodsCode %>">
+					
 				<%
 					}
 				}%>			
@@ -89,7 +90,11 @@ List<GoodsBean> goodsList = gBean.goodsTbl();	// 상품관련데이터 반환용
 			
 		</main>
 		<!-- main#main -->
-       
+		
+		
+		
+		
+		       
        <!-- 푸터템플릿 시작 -->
        <%@ include file="/ind/footerTmp.jsp" %>
         <!-- 푸터템플릿 끝 -->

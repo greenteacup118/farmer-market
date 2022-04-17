@@ -35,15 +35,28 @@ $(function(){
 	
 	// 상품 총합 가격 계산(수량 추가 버튼 클릭시)
 	$(".cntP").click(function(){
+		let eventP = $(this).parent().parent().parent().parent().parent().next().val();
+		//alert(eventP);
 		let Cnt = parseInt($(this).prev().val());
-		let Price = parseInt($(this).parent().parent().next().children().next().val());
-		let tPrice = Cnt*Price;
-		tPrice = tPrice.toLocaleString() + " 원";
-		//alert(Price + "dfsdf" + Cnt);
-		//alert(tPrice);
-		$(this).parent().parent().next().children().first().text(tPrice);
-		
-		
+		let Price = "";
+		let tPrice = "";
+		if(eventP > 0) {
+			Price = parseInt($(this).parent().parent().next().children().next().next().val());
+			tPrice = Cnt*Price;
+			let etPrice = eventP/100;
+			etPrice = tPrice-(tPrice*etPrice);
+			tPrice = tPrice.toLocaleString() + " 원";
+			etPrice = etPrice.toLocaleString() + " 원";
+			$(this).parent().parent().next().children().first().text(tPrice);
+			$(this).parent().parent().next().children().next().text(etPrice);
+		} else {
+			Price = parseInt($(this).parent().parent().next().children().next().val());
+			tPrice = Cnt*Price;
+			tPrice = tPrice.toLocaleString() + " 원";
+			$(this).parent().parent().next().children().first().text(tPrice);
+		}
+
+
 
 
 		let la1 = "";
@@ -66,7 +79,7 @@ $(function(){
 		
 		
 		// 상품할인금액 계산
-		let eventRate = $(this).parent().parent().next().children().next().next().val();
+		let eventRate = $(this).parent().parent().parent().parent().parent().next().val();
 		if(isNaN(eventRate)) eventRate = 0;		
 		//alert(eventRate);
 		let eventPrice = Price*(eventRate/100);
@@ -119,14 +132,26 @@ $(function(){
 	
 	// 상품 총합 가격 계산(수량 감소 버튼 클릭시)	
 	$(".cntM").click(function(){
-		let eventRate = $(this).parent().parent().next().children().next().next().val();
+		let eventP = $(this).parent().parent().parent().parent().parent().next().val();
+		//alert(eventP);
 		let Cnt = parseInt($(this).next().val());
-		let Price = parseInt($(this).parent().parent().next().children().next().val());
-		let tPrice = Cnt*Price;
-		tPrice = tPrice.toLocaleString() + " 원";
-		//alert(Price + "dfsdf" + Cnt);
-		//alert(tPrice);
-		$(this).parent().parent().next().children().first().text(tPrice);
+		let Price = "";
+		let tPrice = "";
+		if(eventP > 0) {
+			Price = parseInt($(this).parent().parent().next().children().next().next().val());
+			tPrice = Cnt*Price;
+			let etPrice = eventP/100;
+			etPrice = tPrice-(tPrice*etPrice);
+			tPrice = tPrice.toLocaleString() + " 원";
+			etPrice = etPrice.toLocaleString() + " 원";
+			$(this).parent().parent().next().children().first().text(tPrice);
+			$(this).parent().parent().next().children().next().text(etPrice);
+		} else {
+			Price = parseInt($(this).parent().parent().next().children().next().val());
+			tPrice = Cnt*Price;
+			tPrice = tPrice.toLocaleString() + " 원";
+			$(this).parent().parent().next().children().first().text(tPrice);
+		}
 		
 		
 		
@@ -150,6 +175,7 @@ $(function(){
 		
 		
 		// 상품할인금액 계산
+		let eventRate = $(this).parent().parent().parent().parent().parent().next().val();
 		if(isNaN(eventRate)) eventRate = 0;		
 		//alert(eventRate);
 		let eventPrice = Price*(eventRate/100);
@@ -201,7 +227,14 @@ $(function(){
 		} else {
 			$(this).prop("disabled", true); 		
 		}
-		if (Cnt==0)	{$(this).prop("disabled", true);} 						
+		if (Cnt==0)	{
+			$(this).prop("disabled", true);
+			$(this).parent().parent().next().children().first().css({
+				"text-decoration":"none",
+				"color":"#000"
+				});
+			$(this).parent().parent().next().children().next().css("display","none");
+		} 						
 	});
 	
 	
@@ -242,11 +275,12 @@ $(function(){
 	
 	
 	// 장바구니 전체선택 버튼
+	
 	$("#chkAll1").click(function(){
 		let boolChk = $(this).prop("checked");
 		
 		$(".basketChk input").prop("checked", boolChk);
-		$("#chkAll2 input").prop("checked", boolChk);
+		$("#chkAll2").prop("checked", boolChk);
 	});
 	
 	
@@ -254,7 +288,7 @@ $(function(){
 		let boolChk = $(this).prop("checked");
 		
 		$(".basketChk input").prop("checked", boolChk);
-		$("#chkAll1 input").prop("checked", boolChk);
+		$("#chkAll1").prop("checked", boolChk);
 	});
 	
 	// 장바구니 전체선택 역방향 전체 적용
@@ -267,15 +301,29 @@ $(function(){
 			$("input.chkAll").prop("checked", false);
 		}
 	});
+
 	
-	
-	
+	// 주문하기 버튼 선택시 실행
 	$("#basket_purchase").click(function(){
 		alert("주문이 완료되었습니다.");
 		$("#basketFrm").submit();
 	});
 	
 	
+	// 선택삭제 버튼 선택시 실행
+	$(".selClickBtn").click(function(){
+		//alert("OK!");
+		
+		let chk = confirm("선택하신 물품을 삭제하시겠습니까?")
+		
+		if(chk) {
+			$("#basketFrm").attr("action","/goods/goods_basketDelete.jsp");
+			$("#basketFrm").submit();			
+		}
+		
+	});
+	
+
 	
 	
 	
