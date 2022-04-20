@@ -3,12 +3,20 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>
+<jsp:useBean id="myPageDao" class="pack_MyPage.MyPageDao"/>
 <jsp:useBean id="memberDao" class="pack_Member.MemberDao" />
 <jsp:useBean id="mBean" class="pack_Member.MemberBean"/>
 <jsp:setProperty name="mBean" property="*"/>
 <%
 
 boolean result = memberDao.insertMember(mBean);
+
+// 배송지 관리 테이블에 정보 저장
+String addr = mBean.getuAddr();
+String id = mBean.getuId();
+String name = mBean.getuName();
+myPageDao.insertAddr(id, name ,addr);
+
 if (result) {
 %>
 <script>

@@ -6,7 +6,8 @@ public class GoodsQnABean { //상품문의
 	private String goodsCode;		// 제품코드
 	private String title_q ;		// 제목
 	private String contetns_q;		// 내용
-	private String fileName_q;		// 파일 이름
+	private String fileOName_q;		// 파일 이름
+	private String fileRName_q;		// 파일 이름
 	private String writeTime_q;				// 작성시간
 	private int view_cnt_q;				// 조회수
 	public int getNo() {
@@ -39,11 +40,17 @@ public class GoodsQnABean { //상품문의
 	public void setContetns_q(String contetns_q) {
 		this.contetns_q = contetns_q;
 	}
-	public String getFileName_q() {
-		return fileName_q;
+	public String getFileOName_q() {
+		return fileOName_q;
 	}
-	public void setFileName_q(String fileName_q) {
-		this.fileName_q = fileName_q;
+	public void setFileOName_q(String fileOName_q) {
+		this.fileOName_q = fileOName_q;
+	}
+	public String getFileRName_q() {
+		return fileRName_q;
+	}
+	public void setFileRName_q(String fileRName_q) {
+		this.fileRName_q = fileRName_q;
 	}
 	public String getWriteTime_q() {
 		return writeTime_q;

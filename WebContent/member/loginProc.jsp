@@ -11,6 +11,16 @@ String uPw = request.getParameter("uPw");
 //------------------------------------------------------------
 String to = request.getParameter("to");
 String with = request.getParameter("goodsCode");
+
+String url = "";
+
+//상품코드 관련 페이지가 아니라면 어디로 갈건지만(to)
+if(with != null){
+	url = to + "?goodsCode=" + with;
+} else if(with == null){
+	url = "/index.jsp";
+}
+
 //------------------------------------------------------------
 
 String msg = "아이디 또는 비밀번호를 확인해주세요.";
@@ -20,11 +30,10 @@ if (result) {
 	session.setAttribute("uId_Session", uId);
 
 //만약 로그인 전에 가려했던 페이지가 있었다면?	
-if (!to.equals("null")) {
+if (to != null) {
 %>
 <script>
-	let url = <%=to%> + "?goodsCode=" + <%=with%>;
-	location.href = url;
+	location.href = "<%=url%>";
 </script>
 <%
 }

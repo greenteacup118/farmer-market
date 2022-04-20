@@ -211,6 +211,110 @@ div.mainList div.goods div.beforePrice:after {
 /* ------------------------------- Main 상품 리스트 끝 ------------------------------ */
 /* ---------------------------------------------------------------------------------- */
 
+/* ---------------------------------------------------------------------------------- */
+/* ------------------------------- 장바구니 팝업 시작 ------------------------------ */
+div#popUp {
+	padding: 10px;
+	width: 600px;
+	height: 300px;
+	margin: 0 auto;
+	width: 600px;
+}
+
+div#popUp div#title {
+	font-size: 23px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	padding-top: 20px;
+	border-bottom: 1px solid #efefef;
+}
+
+div#popUp div#name {
+	padding: 20px 0;
+	font-size: 19px;
+	color: #555;
+	justify-content: space-between;
+}
+
+div#popUp div#name div#nameRight {
+	padding: 0 10px;
+	font-size: 22px;
+	color: #f80;
+	font-weight: bold;
+}
+
+div#popUp div.dFlex {
+	justify-content: space-between;
+}
+
+div#popUp div#price {
+	padding: 10px;
+	padding-top: 0;
+}
+
+div#popUp div.cntBtn {
+	margin: 10px 0;
+	text-align: center;
+	border: 1px solid #dddfe1;
+	text-align: center;
+}
+
+div#popUp div.cntBtn>* {
+	width: 30px;
+	height: 30px;
+	font-size: 18px;
+	text-align: center;
+	border: none;
+	background-color: #fff;
+	outline: none;
+}
+
+div#popUp div.cntBtn button {
+	cursor: pointer;
+}
+
+div#popUp div#total {
+	padding: 10px;
+}
+
+div#popUp div#total div#totalPrice {
+	font-size: 23px;
+	font-weight: bold;
+}
+
+div#popUp div#btnArea {
+	justify-content: center;
+}
+
+div#popUp div#btnArea button {
+	margin: 4px;
+	width: 200px;
+	height: 45px;
+	cursor: pointer;
+}
+
+div#popUp div#btnArea button#cancelBtn {
+	font-weight: bold;
+	padding: 13px 15px;
+	color: #5f0080;
+	border: 1px solid #5f0080;
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+div#popUp div#btnArea button#basketBtn {
+	font-weight: bold;
+	padding: 13px 15px;
+	background-color: #5f0080;
+	border: 1px solid #5f0080;
+	color: #fff;
+	border-radius: 3px;
+}
+
+
+/* ------------------------------- 장바구니 팝업  끝 ------------------------------ */
+/* ---------------------------------------------------------------------------------- */
+
 /* --------------------------------------------------------------------------- */
 /* ------------------------------- index.jsp 끝 ------------------------------ */
 /* --------------------------------------------------------------------------- */

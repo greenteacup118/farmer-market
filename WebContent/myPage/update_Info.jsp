@@ -28,7 +28,7 @@ mBean = memDao.selectMemberOne(uId_Session);
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!---------------------------카카오 주소검색 API 끝  ------------------------------------------>
 <script src="/source/jquery-3.6.0.min.js"></script>
-<script src="/script/script_MyPage.js"></script>
+<script src="/script/script_myPage.js"></script>
 
 </head>
 <body>

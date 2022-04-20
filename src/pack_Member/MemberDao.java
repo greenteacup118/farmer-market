@@ -187,5 +187,5 @@ public class MemberDao {
 
 		return flag;
 	}
-
+	
 }

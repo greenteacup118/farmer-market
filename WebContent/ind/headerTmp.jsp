@@ -75,21 +75,23 @@ String uId_session = (String) session.getAttribute("uId_Session");
 		<div id="header-bot" class="dFlex">
 			<div id="header-GNB">
 				<ul id="gnbUl" class="dFlex">
-					<li class="gnbLi"><a href="#">채소</a></li>
-					<li class="gnbLi"><a href="#">과일</a></li>
-					<li class="gnbLi"><a href="#">해산물</a></li>
-					<li class="gnbLi"><a href="#">육류</a></li>
+					<li class="gnbLi"><a href="/goods/goods_vegitable.jsp">채소</a></li>
+					<li class="gnbLi"><a href="/goods/goods_fruit.jsp">과일</a></li>
+					<li class="gnbLi"><a href="/goods/goods_seafood.jsp">해산물</a></li>
+					<li class="gnbLi"><a href="/goods/goods_meet.jsp">육류</a></li>
 				</ul>
 			</div>
 
 			<!-- 검색 텍스트 입력 -->
 			<div id="header-util" class="dFlex">
 				<div id="searchDiv">
-					<input type="text" id="searchInput" name="search"
-						placeholder="검색어를 입력해주세요.">
-					<button type="button" id="searchBtn">
-						<i class="fa fa-fw fa-search"></i>
-					</button>
+					<form method="get" action="/goods/goods_search.jsp">
+						<input type="text" id="searchInput" name="search"
+							placeholder="검색어를 입력해주세요.">
+						<button type="submit" id="searchBtn">
+							<i class="fa fa-fw fa-search"></i>
+						</button>
+					</form>
 				</div>
 				<!-- div#searchDiv -->
 

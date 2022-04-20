@@ -3,6 +3,131 @@
  */
 
 $(function() {
+
+	//---------------------------------------------------------------------------
+	//---------------------------myPageRead.jsp 시작--------------------------
+	//---------------------------------------------------------------------------
+
+	// 상품후기 게시판에서 게시물 클릭했을 때
+	$("tr#bbsCmtTr").click(function() {
+		let no = $(this).children().children().val();
+		let type = $(this).children().children().next().val();
+		let write = $(this).children().children().next().next().val();
+
+		let url = "/myPage/myPageRead.jsp?no=" + no + "&type=" + type + "&write=" + write;
+		location.href = url;
+	});
+
+	// 상품문의 게시판에서 게시물 클릭했을 때
+	$("tr#bbsQnaTr").click(function() {
+		let no = $(this).children().children().val();
+		let type = $(this).children().children().next().val();
+		let write = $(this).children().children().next().next().val();
+
+		let url = "/myPage/myPageRead.jsp?no=" + no + "&type=" + type + "&write=" + write;
+		location.href = url;
+	});
+
+	// 이전글 이동하기 클릭
+	$("tr#beforeRead").click(function() {
+		let no = $(this).children().next().children().next().val();
+		let type = $(this).children().next().children().next().next().val();
+		let write = $(this).children().next().children().next().next().next().val();
+
+		let url = "/myPage/myPageRead.jsp?no=" + no + "&type=" + type + "&write=" + write;
+		location.href = url;
+	});
+
+	// 다음글 이동하기 클릭
+	$("tr#afterRead").click(function() {
+		let no = $(this).children().next().children().next().val();
+		let type = $(this).children().next().children().next().next().val();
+		let write = $(this).children().next().children().next().next().next().val();
+
+		let url = "/myPage/myPageRead.jsp?no=" + no + "&type=" + type + "&write=" + write;
+		location.href = url;
+	});
+
+	//목록 버튼 클릭시
+	$("button#toListBtn").click(function() {
+		let type = $("div#title input#type").val();
+
+		if (type == "c") {
+			location.href = "/myPage/goodsComments.jsp";
+		} else if (type == "q") {
+			location.href = "/myPage/goodsQnA.jsp";
+		}
+	});
+
+	//삭제 버튼 클릭시
+	$("button#deleteBtn").click(function() {
+		let chk = "작성하신 글을 삭제하시겠습니까?";
+
+		if (confirm(chk)) {
+			let type = $("div#title input#type").val();
+			let no = $("div#title input#no").val();
+
+			let url = "/myPage/deleteReadProc.jsp?no=" + no + "&type=" + type;
+			location.href = url;
+		}
+	});
+
+	//수정 버튼 클릭시
+	$("button#updateBtn").click(function() {
+		let type = $("div#title input#type").val();
+		let no = $("div#title input#no").val();
+
+		let url = "/myPage/myPageRead.jsp?no=" + no + "&type=" + type + "&write=y";
+		location.href = url;
+	});
+
+
+	//등록 버튼 클릭시
+	$("button#writeBtn").click(function() {
+		let type = $("div#title input#type").val();
+		let no = $("div#title input#no").val();
+		
+		let url = "/myPage/updateReadProc.jsp?no=" + no + "&type=" + type;
+		$("form#goodsBbsFrm").attr("action", url);	
+		$("form#goodsBbsFrm").submit();
+	});
+	//---------------------------------------------------------------------------
+	//---------------------------myPageRead.jsp 끝--------------------------
+	//---------------------------------------------------------------------------
+
+
+	//---------------------------------------------------------------------------
+	//---------------------------wishList.jsp 시작-------------------------------
+	//---------------------------------------------------------------------------
+	//삭제하기 버튼 클릭시
+	$("#deleteWishBtn").click(function() {
+
+		let goodsCode = $("input#goodsCode").val();
+
+		let url = "/myPage/wishListDeleteProc.jsp?goodsCode=" + goodsCode;
+
+		$("#deleteWishFrm").attr("action", url);
+		$("#deleteWishFrm").submit();
+	});
+
+	//장바구니 담기 버튼 클릭시
+	$("#sendBasketBtn").click(function() {
+		let goodsCode = $("input#goodsCode").val();
+
+		let url = "/myPage/wishToBasketProc.jsp?goodsCode=" + goodsCode;
+		location.href = url;
+	});
+
+	//금액 표시하기
+	$(".price").each(function(i, v) {
+		let price = parseInt($(this).text().replace(/,/g, ''));
+		price = price.toLocaleString() + "원";
+		$(this).text(price);
+	});
+	//---------------------------------------------------------------------------
+	//---------------------------wishList.jsp 끝-------------------------------
+	//---------------------------------------------------------------------------
+
 	//---------------------------------------------------------------------------
 	//---------------------------update_info.jsp 시작--------------------------
 	//---------------------------------------------------------------------------
@@ -174,6 +299,60 @@ $(function() {
 			$("#memQuitFrm").submit();
 		}
 	});
+
+	//---------------------------------------------------------------------------
+	//---------------------------orderList.jsp 시작----------------------------
+	//---------------------------------------------------------------------------
+	$("select#yearSelect").change(function() {
+		let value = $("select#yearSelect option:selected").val();
+		location.href = "/myPage/orderList.jsp?where=" + value;
+	});
+
+
+	//---------------------------------------------------------------------------
+	//---------------------------orderList.jsp 끝----------------------------
+	//---------------------------------------------------------------------------
+
+
+
+	//---------------------------------------------------------------------------
+	//---------------------------addrUpdate.jsp 시작----------------------------
+	//---------------------------------------------------------------------------
+
+	//새배송지 추가 등록버튼 클릭
+	$("form#addrFrm #addrInsBtn").click(function() {
+		if ($("#addrFrm input#addrInput1").val() == "") {
+			alert("검색버튼을 눌러 주소를 검색해주세요.");
+			return;
+		}
+
+		if ($("#addrFrm input#addrInput2").val() == "") {
+			alert("세부 주소를 입력해주세요.");
+			return;
+		}
+
+		$("form#addrFrm").submit();
+	});
+
+	// action="modifyAddrProc"
+
+	//삭제하기 버튼 클릭시
+	$("#addrListFrm #deleteBtn").click(function() {
+		$("#addrListFrm").attr("action", "/myPage/deleteAddrProc.jsp?proc=D");
+		$("#addrListFrm").submit();
+	});
+
+	$(".addrTr input[type=checkbox]").click(function() {
+		let check = $(this).parent().next().next().next().html();
+		if (check != "") {
+			alert("기본 주소지입니다. 기본 주소지는 개인 정보 수정에서 수정해주세요.")
+			$(this).prop("checked", false);
+		}
+	});
+
+	//---------------------------------------------------------------------------
+	//---------------------------addrUpdate.jsp 끝----------------------------
+	//---------------------------------------------------------------------------
 
 
 });

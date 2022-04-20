@@ -84,10 +84,10 @@
 
 				for (int j = 0; j < 2; j++) {
 					if (j == 0) {
-					orderby = " order by goodsPrice ";
+				orderby = " order by goodsPrice ";
 
 					} else {
-					orderby = " order by goodsPrice DESC ";
+				orderby = " order by goodsPrice DESC ";
 
 					}
 
@@ -100,10 +100,10 @@
 
 			<div class="mainList">
 				<div class="goods_title">
-					<a href="#"><%=title[i] %><%=subTitle[j] %></a>
+					<a href="#"><%=title[i]%><%=subTitle[j]%></a>
 				</div>
 				<div class="goods_container dFlex">
-					
+
 					<%
 					for (int k = 0; k < list.size(); k++) {
 						GoodsBean gBean = list.get(k);
@@ -117,12 +117,11 @@
 
 						// 할인 금액
 						int salePrice = goodsPrice - (goodsPrice * eventRate / 100);
-						
 					%>
-					
+
 					<div class="goods">
 						<div class="goodsImg">
-							<img src="/images<%=goodsImg %>" alt="상품이미지">
+							<img src="/images<%=goodsImg%>" alt="상품이미지">
 						</div>
 
 						<div class="goodsBtn">
@@ -130,31 +129,30 @@
 						</div>
 
 						<div class="hidden">
-							<input type="hidden" value="<%=goodsCode %>">
+							<input type="hidden" value="<%=goodsCode%>">
 						</div>
-						<div class="goodsName">[<%=title[i] %>] <%=goodsName %></div>
-						<div class="goodsCatch"><%=goodsCatch %></div>
-						<div class="goodsPrice">
-							<%
-							if (eventRate != 0) {
-							%>
-							<span class="salePer"><%=eventRate%>%</span>
-							<%
-							}
-							%>
-							<span class="price"><%=goodsPrice %></span>
-						</div>
+						<div class="goodsName">
+							[<%=title[i]%>]
+							<%=goodsName%></div>
+						<div class="goodsCatch"><%=goodsCatch%></div>
 						<%
 						if (eventRate != 0) {
 						%>
-						<div class="beforePrice"><%=salePrice %></div>
+						<div class="goodsPrice">
+							<span class="salePer"><%=eventRate%>%</span> <span class="price"><%=salePrice%></span>
+						</div>
+						<div class="beforePrice"><%=goodsPrice%></div>
+						<%
+						} else if (eventRate == 0) {
+						%>
+						<div class="goodsPrice"><span class="price"><%=goodsPrice%></span></div>
 						<%
 						}
 						%>
 					</div>
 					<!-- div#goods -->
 					<%
-					} // dao 반복문					
+					} // dao 반복문
 					%>
 					<!-- ///////////////////////////// 반복되는 부분 끝 /////////////////////////////-->
 					<!-- ///////////////////////////// 반복되는 부분 끝 /////////////////////////////-->
@@ -166,7 +164,7 @@
 			</div>
 			<!-- div#mainList -->
 			<%
-				} //subtitle 반복문
+			} //subtitle 반복문
 			} // category 반복문
 			%>
 

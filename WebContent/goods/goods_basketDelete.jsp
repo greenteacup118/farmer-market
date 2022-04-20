@@ -14,6 +14,17 @@ request.setCharacterEncoding("UTF-8");
 	
 String[] goodsCode = request.getParameterValues("goodsCode[]");
 
+if(goodsCode==null || goodsCode.length<=0){		 %>
+	
+<script>
+	alert("선택하신 상품이 없습니다.");
+	window.history.back();
+</script>
+
+<%
+return;
+}
+
 for(int i=0; i<goodsCode.length; i++) {
 	delBasket.deleteBasket(uId_Session, goodsCode[i]);
 }

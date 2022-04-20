@@ -71,6 +71,10 @@ div#basket_select {
 	font-size: 18px;
 }
 
+#basket_select table.myBasket td:first-child {
+	width: 30px;
+}
+
 #basket_select table.myBasket td:last-child {
 	font-weight: bold;
 	font-size: 18px;

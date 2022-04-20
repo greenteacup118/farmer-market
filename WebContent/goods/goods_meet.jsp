@@ -39,7 +39,7 @@ List<GoodsBean> goodsList = gBean.goodsTbl();	// 상품관련데이터 반환용
 			
 			<h1 id="todayGoods">오늘의 품목</h1>
 			
-			<form action="goods_detailProc.jsp" id="codeFrm" method="get">
+			<form action="goods_detail.jsp" id="codeFrm" method="get">
 			<div id="goodsList" class="dFlex">
 			
 			<%
@@ -52,6 +52,7 @@ List<GoodsBean> goodsList = gBean.goodsTbl();	// 상품관련데이터 반환용
 					String goodsImg = goodsBean.getGoodsImg(); 
 					String goodsName = goodsBean.getGoodsName();
 					int goodsPrice = goodsBean.getGoodsPrice();
+					int eventRate = goodsBean.getEventRate();
 					
 					
 					
@@ -69,9 +70,24 @@ List<GoodsBean> goodsList = gBean.goodsTbl();	// 상품관련데이터 반환용
 							<tr>
 								<td class="goodsTitle"><a href="#"><%=goodsName %></a></td>
 							</tr>
+							<%if(eventRate>0) { %>
 							<tr>
-								<td class="goodsPrice price"><a href="#"><%=goodsPrice %></a></td>
+								<td class="goodsPrice orgPrice">
+									<span class="eventRate"><%=eventRate+"%  "%></span>
+									<span class="orgPr"><%=goodsPrice %></span>
+								</td>
 							</tr>
+							<tr>
+								<td class="goodsPrice price eventPrice"><%=goodsPrice-(goodsPrice*eventRate/100) %></td>
+							</tr>
+							<%} else { %>
+							<tr>
+								<td class="goodsPrice price"><%=goodsPrice %></td>
+							</tr>
+							<tr>
+								<td class="goodsPrice"></td>
+							</tr>
+							<%} %>
 						</tbody>
 					</table>
 					<input type="hidden" name="goodsCode" value="<%=goodsCode %>">
