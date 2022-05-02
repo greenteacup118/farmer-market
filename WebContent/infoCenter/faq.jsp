@@ -14,7 +14,7 @@
 <title>Document</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/style/style_infoCenter.css">
+<link rel="stylesheet" href="/style/style_infoCenter.css">
 
 <script src="/source/jquery-3.6.0.min.js"></script>
 <script src="/script/script_infoCenter.js"></script>
@@ -29,43 +29,8 @@
 	<div id="wrap">
 
 
-		<header id="headerTmp">
+		<jsp:include page="/ind/headerTmp.jsp" />
 
-			<div id="headMenu">
-				<ul class="dFlex">
-					<li><a href="#">로그아웃</a></li>
-					<li><a href="#">고객센터</a></li>
-				</ul>
-			</div>
-			<a href="/infoCenter/notice.jsp"><img
-				src="/images/headerLogo.png" alt="헤더로고" /></a>
-
-			<nav id="headLNB">
-
-				<ul class="dFlex">
-					<li>LNB카테고리</li>
-					<li>|</li>
-					<li>육류</li>
-					<li>|</li>
-					<li>채소</li>
-					<li>|</li>
-					<li>생선</li>
-
-				</ul>
-
-			</nav>
-
-
-
-
-		</header>
-
-		<!--      <div id="headerLMB">
-      
-     
-     
-     </div>
-    -->
 		<main id="main" class="dFlex">
 
 
@@ -97,14 +62,15 @@
 
 				<h3>자주묻는 게시판</h3>
 
-				<hr class="divisionline">
+				<hr id="divisionline_main">
 
 				<table id="FAQTbl">
 					<tbody>
 						<tr class="dropChk">
-							<td class="Question"><span id="Q">Q.</span><span>상품을 반품하고 싶어요 어떻게 하면 되나요?</span> <input
-							id="dropBtn1" class="dropBtn" type="button" value="▼"></td>
-
+							<td class="Question"><span id="Q">Q.</span><span>상품을
+									반품하고 싶어요 어떻게 하면 되나요?</span> <input id="dropBtn1" class="dropBtn"
+								type="button" value="▼"></td>
+                                    
 						</tr>
 
 						<tr id="cheked" class="False">
@@ -117,8 +83,9 @@
 ※ 반품비용을 제외한 환불예정금액은 반품접수 화면에서 확인 가능합니다.</pre></td>
 						</tr>
 						<tr class="dropChk">
-							<td class="Question"><span id="Q">Q.</span><span>비밀번호가 기억나지 않아요.</span> <input class="dropBtn"
-							id="dropBtn2" type="button" value="▼"></td>
+							<td class="Question"><span id="Q">Q.</span><span>비밀번호가
+									기억나지 않아요.</span> <input class="dropBtn" id="dropBtn2" type="button"
+								value="▼"></td>
 						</tr>
 
 						<tr class="cheked">
@@ -135,8 +102,9 @@
 						</tr>
 
 						<tr class="dropChk">
-							<td class="Question"><span id="Q">Q.</span><span>반품 신청을 철회하고 싶어요.</span> <input class="dropBtn"
-							id="dropBtn3" type="button" value="▼"></td>
+							<td class="Question"><span id="Q">Q.</span><span>반품
+									신청을 철회하고 싶어요.</span> <input class="dropBtn" id="dropBtn3"
+								type="button" value="▼"></td>
 						</tr>
 
 						<tr class="cheked">
@@ -151,7 +119,11 @@
 				</table>
 
 
-
+				<div id="buttonArea">
+				<button id="write">
+					<a href="/infoCenter/writePage.jsp">글쓰기</a>
+				</button>
+				</div>
 
 
 				<div id="searchArea">
@@ -175,7 +147,8 @@
 
 		<footer id="footer">
 
-			<hr class="divisionline">
+			<hr id="divisionline_footer">
+			<jsp:include page="/ind/footerTmp.jsp" />
 
 		</footer>
 

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
-
+<%@page import="pack_infoCenter.QnaVO"%>
+<%@page import="java.util.List"%>
+<jsp:useBean id="nvo" class="pack_infoCenter.BBSDAO"/>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-  <link rel="stylesheet" href="/style/style_infoCenter.css">
+<link rel="stylesheet" href="/style/style_infoCenter.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -19,50 +19,19 @@
 <script src="/script/script_infoCenter.js"></script>
 </head>
 <body>
+<%
+request.setCharacterEncoding("UTF-8");
+//List list = nvo.BBSRead2(); 
 
+%>
 
 
 
 
 
 	<div id="wrap">
-		<header id="headerTmp">
+		<jsp:include page="/ind/headerTmp.jsp" />
 
-			<div id="headMenu">
-				<ul class="dFlex">
-					<li><a href="#">로그아웃</a></li>
-					<li><a href="#">고객센터</a></li>
-				</ul>
-			</div>
-			<a href="/infoCenter/notice.jsp"><img
-				src="/images/headerLogo.png" alt="헤더로고" /></a>
-
-			<nav id="headLNB">
-
-				<ul class="dFlex">
-					<li>LNB카테고리</li>
-					<li>|</li>
-					<li>육류</li>
-					<li>|</li>
-					<li>채소</li>
-					<li>|</li>
-					<li>생선</li>
-
-				</ul>
-
-			</nav>
-
-
-
-
-		</header>
-
-		<!--      <div id="headerLMB">
-      
-     
-     
-     </div>
-    -->
 		<main id="main" class="dFlex">
 
 
@@ -94,9 +63,9 @@
 
 				<h3>Q&A게시판</h3>
 
-				<hr class="divisionline">
+				<hr id="divisionline_main">
 
-				<table>
+				<table id="QnaTbl">
 					<tbody>
 						<tr>
 							<td>번호</td>
@@ -104,35 +73,88 @@
 							<td>작성자</td>
 							<td>작성일자</td>
 							<td>조회수</td>
-						<tr>
-							<td>1</td>
-							<td><a href="#">배송지등록을 어떻게 해요?</a></td>
-							<td>문혁민</td>
-							<td>04-10</td>
-							<td>0</td>
+					<%
+					String nowPage = request.getParameter("nowPage");
+					if(nowPage==null){
+						nowPage="1";
+					}
+					int nowblock=1;
+					int numPerpage=5;
+					int pageperblock=5;
+					
+													//20
+					int totalCount=0;
+					
+					totalCount= nvo.Q_getCnt();
+																				
+				
+					int totalPage=(int)Math.ceil((double)totalCount/numPerpage);
+																			
+					int Stratpage=(Integer.parseInt(nowPage)-1)/numPerpage*pageperblock+1;
+					int endPage=Math.min(totalPage , Stratpage+pageperblock-1);
+					
+					nowblock =(Integer.parseInt(nowPage)-1)*numPerpage;
+					
+					List list_q = nvo.Qnalist(nowblock,numPerpage);
+ 					for( int i=0;i<list_q.size();i++) {
+ 						
+ 					QnaVO vo =(QnaVO)list_q.get(i);
+ 					%>
+						<tr id="ibno_q">
+							<td><%=vo.getibno_q()%></td>
+							<td id="pagenext_q"><a href="#"><%=vo.getTitle_q() %></a></td>
+							<td><%=vo.getWriter_q() %></td>
+							<td><%=vo.getWriteTime_q() %></td>
+							<td><%=vo.getview_cnt_q() %></td>
 						</tr>
+						<%} %>
+					
+								
 					</tbody>
 				</table>
 
-
+				<input id="nowPage_q" type="hidden" value="<%=nowPage%>">
 
 				<ul id="PageMove" class="dFlex">
-					<li><a href="#">〈</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">〉</a></li>
+				<%if(Stratpage!=1) {
+				   int before = Stratpage-pageperblock;
+				%>
+					<li><a href="/infoCenter/qna.jsp?nowPage=<%=before%>">&lt;이전</a></li>
+					
+				<% }%>
+				
+					<%
+					for(int j=Stratpage; j<=endPage; j++){
+						String chk="";
+						if(nowPage.equals(""+j)){
+						chk=	"class=\"chk\"";
+						}
+					%>
+					<li <%=chk%>><a href="/infoCenter/qna.jsp?nowPage=<%=j%>"><%=j%></a></li>
+					
+					<%} %>
+					
+					<%if(totalPage!=endPage){
+						int next = endPage + 1;
+						%>
+					<li><a href="/infoCenter/qna.jsp?nowPage=<%=next%>">다음&gt;</a></li>
+					<%} %>
 				</ul>
 
+				<div id="buttonArea">
 				<button id="write">
 					<a href="/infoCenter/writePage.jsp">글쓰기</a>
 				</button>
+				</div>
 
 				<div id="searchArea">
 
-					<select id="">
+					<select id="titleMenu">
 						<option>제목</option>
 						<option>글내용</option>
 						<option>제목+글내용</option>
-					</select> <input type="text">
+					</select> 
+					<input type="text">
 
 
 					<button type="button" id="searchBtn">
@@ -149,7 +171,8 @@
 
 		<footer id="footer">
 
-			<hr class="divisionline">
+			<hr id="divisionline_footer">
+			<jsp:include page="/ind/footerTmp.jsp" />
 
 		</footer>
 

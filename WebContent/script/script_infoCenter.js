@@ -1,4 +1,5 @@
-
+/**
+ * 
 /**
  * 
  */
@@ -40,35 +41,65 @@ $(function() {
 			$(this).val("▼");
 			
 		}
-
-		//}
-
-
-	});
-
-	/*	$("#main #contents table#FAQTbl input#dropBtn").click(function() {
-// alert(type(chk));
-let chkTF = $("#main #contents table#FAQTbl tr").hasClass("False");      
-if(!chkTF){
  
-  $("#main #contents table#FAQTbl .False").css("display", "none");
-$("#main #contents table#FAQTbl .cheked").addClass("False");
- $("#main #contents table#FAQTbl input#dropBtn").val("▼")  
-}
-	 
+	});
+			
+			 $("button#saveBtn").click(function(){
+            let a = $("select[name=select]").val()
 
 
-});*/
+               if(a=="게시판 선택"){
+                    alert("게시판을 선택해주세요");
+                  
+                }
+	
+	 });
+				$("#noticeTbl tr#ibno_n").click(function(){
 
+					let ibno_n = $(this).children().eq(0).text()
+					let nowPage=$("input#nowPage").val();
+					let url = "/infoCenter/readPage_n.jsp?ibno_n="+ibno_n+"&nowPage="+nowPage;
+				
+					$("#pagenext>a").attr("href",url);
+				})
 
+					$("div#btnArea_read>button#indexBtn").click(function(){
+					let nowPage = $("input#nowPage_read").val();
+					let url = "/infoCenter/notice.jsp?nowPage="+nowPage;
+					
+					location.href = url;
+				})
+	
+			$("#QnaTbl tr#ibno_q").click(function(){
 
-
-
-
-
-
-
-
+					let ibno_q = $(this).children().eq(0).text()
+					let nowPage=$("input#nowPage_q").val();
+					let url = "/infoCenter/readPage_q.jsp?ibno_q="+ibno_q+"&nowPage="+nowPage;
+				
+					$("#pagenext_q>a").attr("href",url);
+				})
+			
+						$("div#btnArea_read_q>button#indexBtn_q").click(function(){
+					let nowPage = $("input#nowPage_read_q").val();
+					let url = "/infoCenter/qna.jsp?nowPage="+nowPage;
+					
+					location.href = url;
+			
+			});
+			$("button#updateBtn").click(function(){
+				let ibno_q= $("input#BBSNum").val()
+				let nowPage = $("input#nowPage_read_q").val();
+				alert(nowPage);
+				let url = "/infoCenter/update.jsp?ibno_q="+ibno_q+"&nowPage="+nowPage;
+				location.href= url;
+				
+				""
+			})
+			
+			
+			
+			
+			
 });/**
  * 
  *//**
