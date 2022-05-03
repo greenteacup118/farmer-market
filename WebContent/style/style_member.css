@@ -1,0 +1,468 @@
+@charset "UTF-8";
+
+@import url(/source/style_Reset.css);
+
+main#main {
+	width: 800px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------member 시작 --------------------------------- */
+/* --------------------------------------------------------------------------- */
+.necessary::after {
+	content: " *";
+	color: #ee6a7b;
+}
+
+div#form-title {
+	border-bottom: 4px solid #000;
+}
+
+div#form-title>p {
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 50px 0;
+}
+
+#form-title div#form-info {
+	text-align: right;
+	font-size: 12px;
+	margin: 15px 0;
+}
+
+form#memberFrm table {
+	margin: 10px auto;
+	width: 750px;
+}
+
+form#memberFrm table td:nth-child(1) {
+	font-weight: bold;
+	width: 160px;
+	padding-left: 20px;
+}
+
+form#memberFrm table input {
+	outline: none;
+}
+
+form#memberFrm table input[type=text], table input[type=password] {
+	width: 370px;
+	padding: 13px 15px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+}
+
+form#memberFrm table button {
+	width: 130px;
+	font-weight: bold;
+	padding: 13px 15px;
+	color: #5f0080;
+	border: 1px solid #5f0080;
+	background-color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+form#memberFrm table tr.beforeAddr button.addrBtn {
+	width: 370px;
+	padding: 13px 15px;
+}
+
+form#memberFrm table label {
+	margin-left: 2px;
+	margin-right: 60px;
+}
+
+form#memberFrm table input[type=radio] {
+	transform: translate(-1px, 5px);
+	width: 17px;
+	height: 17px;
+}
+
+div#birthArea {
+	width: 370px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	text-align: center;
+}
+
+div#birthArea span {
+	color: #aaa;
+	font-size: 18px;
+}
+
+form#memberFrm table input.birthInput {
+	width: 110px;
+	text-align: center;
+	border: none;
+}
+
+form#memberFrm table button.pwBtn, form#memberFrm table button.pwChkBtn
+	{
+	width: 26px;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	border: none;
+	transform: translate(-105px, -9px);
+}
+
+/* -------------------------클릭시 보이도록-------------------------- */
+tr#afterId, tr#afterPw, tr#afterPwChk, tr#afterPhone, tr.afterAddr {
+	display: none;
+}
+/* -------------------------클릭시 보이도록-------------------------- */
+form#memberFrm table tr#afterId td div, tr#afterPw td div, tr#afterPwChk td div,
+	tr.afterAddr td div {
+	margin: 7px 16px;
+	color: #777;
+	transform: translateY(-8px);
+}
+
+form#memberFrm table tr#afterPhone td div {
+	margin: 7px 16px;
+	color: #777;
+	transform: translateY(-8px);
+	color: green;
+}
+
+main#main table#agreeTbl {
+	width: 750px;
+	margin: 10px auto;
+	padding: 20px 10px;
+	border-top: 3px solid #000;
+	border-bottom: 1px solid #eee;
+}
+
+main#main table#agreeTbl td#title {
+	width: 130px;
+	font-weight: bold;
+}
+
+main#main table#agreeTbl td button#agreeBtn {
+	font-size: 13px;
+	border: none;
+	background-color: #fff;
+	color: #5f0080;
+	font-weight: bold;
+	cursor: pointer;
+	transform: translateX(10px);
+}
+
+main#main table#agreeTbl div#joinAgreement {
+	display: none;
+}
+
+main#main table#agreeTbl td:nth-child(2) {
+	width: 50px;
+}
+
+main#main table#agreeTbl td:nth-child(2) input {
+	width: 17px;
+	height: 17px;
+	transform: translateY(1px);
+}
+
+table#agreeTbl tr:first-child td {
+	height: .9em;
+}
+
+table#agreeTbl td p#allAgree {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+table#agreeTbl tr:nth-child(2) td {
+	height: 8px;
+	font-size: 13px;
+}
+
+table#agreeTbl tr.oneAgree {
+	font-size: 15px;
+	color: #666;
+}
+
+table#agreeTbl tr.oneAgree span {
+	color: #999;
+}
+
+div#btnArea {
+	border-bottom: 1px solid #eee;
+	padding: 20px 0;
+	text-align: center;
+}
+
+div#btnArea button#memberBtn {
+	width: 240px;
+	height: 55px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------member 끝 ----------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------- login 시작 --------------------------------- */
+/* --------------------------------------------------------------------------- */
+main#login {
+	width: 350px;
+	margin: 80px auto 200px;
+}
+
+form#loginFrm table {
+	width: 100%;
+	text-align: center;
+}
+
+#login form#loginFrm table tr#title td {
+	font-size: 22px;
+	font-weight: bold;
+	padding: 30px 0;
+}
+
+form#loginFrm table tr td input {
+	width: 100%;
+	padding: 20px 15px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+}
+
+form#loginFrm table tr td button.pwBtn {
+	width: 26px;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	border: none;
+	background-color: #fff;
+	transform: translate(-35px, 20px);
+}
+
+form#loginFrm table tr td div#util {
+	justify-content: space-between;
+	align-content: flex-end;
+	padding: 0 5px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+form#loginFrm table tr td div#util div#sec {
+	align-content: center;
+}
+
+form#loginFrm table tr td div#util label {
+	width: 60px;
+}
+
+form#loginFrm table tr td div#util input {
+	width: 17px;
+	height: 17px;
+	transform: translateY(-2px);
+	border-radius: 2px;
+}
+
+form#loginFrm table tr td div#util ul#findAccount {
+	align-content: center;
+}
+
+ul#findAccount li.findLi:nth-child(2) {
+	margin: 0 5px;
+}
+
+form#loginFrm table tr td button#loginBtn {
+	width: 100%;
+	height: 55px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	cursor: pointer;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+form#loginFrm table tr td button#memberBtn {
+	width: 100%;
+	height: 55px;
+	color: #5f0080;
+	font-size: 16px;
+	background-color: #fff;
+	border: 1px solid #5f0080;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------- login 끝 --------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ----------------------------joinAgreement 시작 ------------------------- */
+/* --------------------------------------------------------------------------- */
+div.dimmed {
+	display: inline-block;
+}
+
+div.dimmed::after {
+	content: '';
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.75);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
+
+.popup {
+	z-index: 1;
+	height: 700px;
+	position: absolute;
+	overflow: scroll;
+	top: 110%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 300px;
+	max-width: 600px;
+	background-color: #fff;
+	border-radius: 15px;
+	box-shadow: 0 2px 55px -25px rgb(0 0 0/ 100%);
+}
+
+.popup  .title {
+	border-radius: 15px 15px 0 0;
+	min-height: 30px;
+	background-color: #9c8ce6;
+	padding: 5px 15px;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.popup  .title p {
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.popup  .content {
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.popup  .content p {
+	border-bottom: 1px solid #eee;
+	padding: 5px 0;
+	margin: 5px 0;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.popup  .content p:nth-child(2), .popup  .content p:nth-child(3) {
+	margin-top: 35px;
+}
+
+.popup  .cmd {
+	bottom: 0;
+	min-height: 40px;
+	padding: 15px 15px;
+	box-sizing: border-box;
+	border-radius: 0 0 15px 15px;
+	min-height: 40px;
+	text-align: right;
+}
+
+.popup  .cmd .button {
+	border-radius: 8px;
+	padding: 5px 10px;
+	border: 1px solid #aaa;
+	font-weight: bold;
+	font-size: 17px;
+	color: #777;
+	cursor: pointer;
+}
+
+.popup  .cmd .button:hover {
+	color: #fff;
+	background-color: #000;
+	border-color: #000;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ----------------------------joinAgreement 끝 --------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ----------------------------idCheck 시작 --------------------------------- */
+/* --------------------------------------------------------------------------- */
+div#idCheck {
+	text-align: center;
+	height: 240px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+
+#idCheck p {
+	font-size: 20px;
+}
+
+#idCheck p span {
+	font-weight: bold;
+}
+
+#idCheck button {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px 15px;
+	margin-top: 20px;
+	color: #fff;
+	background-color: #5f0080;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------idCheck 끝 --------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ------------------------------find_member시작 -------------------------- */
+/* --------------------------------------------------------------------------- */
+
+form#loginFrm table tr td button#findBtn {
+	width: 100%;
+	height: 55px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	cursor: pointer;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+form#loginFrm table tr td.subTitle {
+	text-align: left;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+form#loginFrm table tr td div.find_div {
+	justify-content: center;
+}
+/* --------------------------------------------------------------------------- */
+/* ------------------------------find_member 끝 -------------------------- */
+/* --------------------------------------------------------------------------- */

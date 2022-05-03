@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+@import url(/source/style_Reset.css);
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------headerTmp 시작------------------------------- */
+/* --------------------------------------------------------------------------- */
+div#header {
+	color: #555;
+	width: 1200px;
+	margin: 0 auto;
+	padding: 10px 10px;
+	width: 1200px;
+}
+
+div#header-top {
+	font-weight: bold;
+}
+
+div#header-top ul#headerUl {
+	justify-content: flex-end;
+}
+
+#header-top ul#headerUl li.mainLi {
+	padding: 0 10px;
+}
+
+#header-top ul#headerUl li.mainLi:nth-child(1) a {
+	color: #833080;
+}
+
+#header-top ul#headerUl li.mainLi:nth-child(2), #header-top ul#headerUl li.mainLi:nth-child(4)
+	{
+	color: #d8d8d8;
+	font-size: 14px;
+}
+
+#headerUl li.mainLi div#header-hiddenDiv {
+	position: absolute;
+	width: 80px;
+	height: 12px;
+}
+
+div#header-hiddenDiv ul {
+	transform: translate(-52px, 10px);
+	position: absolute;
+	z-index: 2;
+	padding: 0 15px;
+	border: 1px solid #d4d4d4;
+	width: 130px;
+	display: none;
+	background-color: #fff;
+	border-radius: 2px;
+}
+
+li.mainLi:hover div#header-hiddenDiv ul {
+	display: block;
+}
+
+div#header-hiddenDiv:hover div#header-hiddenDiv ul {
+	display: block;
+}
+
+#headerUl li.mainLi div#header-hiddenDiv li {
+	margin: 15px 0;
+}
+
+div#header-Logo {
+	text-align: center;
+}
+
+#header-Logo img {
+	width: 200px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+div#header-bot {
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0 10px;
+	border-bottom: 1px solid #eee;
+}
+
+#header-bot div#header-GNB {
+	flex: 1;
+	margin: 0 130px;
+}
+
+#header-bot div#header-GNB ul#gnbUl li.gnbLi {
+	flex: 1;
+	text-align: center;
+	padding: 3px 0;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+#header-bot div#header-GNB ul#gnbUl li.gnbLi:hover a{
+	text-decoration: underline;
+}
+
+#header-bot div#header-GNB ul#gnbUl li.gnbLi a {
+	display: inline-block;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#header-bot div#searchDiv {
+	padding: 0 20px;
+}
+
+#header-bot div#searchDiv input#searchInput {
+	width: 300px;
+	padding: 8px 18px;
+	background-color: #f4f4f4;
+	outline: none;
+	border-radius: 25px;
+	border: none;
+}
+
+#header-bot div#searchDiv button#searchBtn {
+	position: absolute;
+	transform: translate(-30px, 5px);
+	border: none;
+	width: 15px;
+	height: 15px;
+	background-color: rgba(255, 255, 255, 0);
+	font-size: 17px;
+	cursor: pointer;
+}
+
+
+div#shortCut div#wishList {
+	font-size: 20px;
+	margin-right: 20px;
+	transform: translateY(4px);
+}
+
+div#shortCut div#basket {
+	font-size: 25px;
+	margin-right: 10px;
+	transform: translateY(2px);
+}
+
+div#shortCut div:hover {
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------headerTmp 끝--------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------footerTmp 시작--------------------------------- */
+/* --------------------------------------------------------------------------- */
+div#footer {
+	color: #555;
+	width: 1200px;
+	margin: 0 auto;
+	padding: 10px 10px;
+	width: 1200px;
+}
+
+div#footer-content {
+	margin: 0 auto;
+	justify-content: space-between;
+}
+
+div#footer-left {
+	padding-left: 40px;
+}
+
+table {
+	font-size: 12px;
+}
+
+table td {
+	height: 50px;
+	padding: 5px 0;
+}
+
+table td:nth-child(2) {
+	padding-left: 15px;
+}
+
+table td#td-title {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+table td#callNum {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+table td div {
+	color: #aaa;
+}
+
+table div.div-bold {
+	font-weight: bold;
+	color: #222;
+}
+
+table div.button {
+	width: 110px;
+	height: 30px;
+	line-height: 27px;
+	text-align: center;
+	border: 1px solid #aaa;
+	font-weight: bold;
+}
+
+table div.button a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+div#footer-right {
+	padding-right: 40px;
+}
+
+div#footer-right div#footer-List {
+	margin: 20px 0 30px 0;
+}
+
+div#footer-List ul#footerUl li.footerLi {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 10px;
+}
+
+div#footer-List ul#footerUl li.footerLi:nth-child(1) {
+	margin-left: 0;
+}
+
+div#footer-explain {
+	margin-bottom: 30px;
+}
+
+ul#explainUl li.explainLi {
+	font-size: 13px;
+	color: #aaa;
+	margin: 4px 0;
+}
+
+div#SNS img {
+	width: 25px;
+	height: 25px;
+	margin-right: 6px;
+	border-radius: 5px;
+}
+
+div#footer-copyright {
+	flex-direction: column;
+	height: 150px;
+	text-align: center;
+	background-color: #f7f7f7;
+	font-size: 13px;
+	justify-content: center;
+}
+
+div#footer-copyright p {
+	color: #aaa;
+	margin: 4px 0;
+}
+
+div#footer-copyright div {
+	margin: 10px 0;
+	color: #aaa;
+	font-weight: bold;
+}
+/* --------------------------------------------------------------------------- */
+/* ---------------------------footerTmp 끝 --------------------------------- */
+/* --------------------------------------------------------------------------- */

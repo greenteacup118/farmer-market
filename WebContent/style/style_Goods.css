@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@import url(/source/style_Reset.css);
+
+/*/////////////////////////////////////////////////////////////
+//////////////////////상품페이지 시작///////////////////////////
+///////////////////////////////////////////////////////////*/
+
+/* div#goodsList 시작 */
+main#mian {
+	text-align: center;
+	width: 1200px;
+	margin: 0 auto 40px;
+}
+
+h1#todayGoods {
+	margin: 40px;
+	text-align: center;
+	/* border: 1px solid #000; */
+}
+
+div#goodsList {
+	/* border: 1px solid #000; */
+	width: 1200px;
+	margin: 0 auto;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* 상품 목록 테이블 시작 */
+#goodsList>table {
+	/* border: 1px solid #000; */
+	border-collapse: collapse;
+	margin: 10px;
+}
+
+#goodsList>table td {
+	width: 350px;
+	/* border: 1px solid #000; */
+	text-align: center;
+}
+
+#goodsList>table td img {
+	width: 330px;
+	height: 435px;
+}
+
+/* 이미지 마우스 오버효과 적용 시작 */
+#goodsList>table td>a {
+	display: block;
+	overflow: hidden;
+}
+
+#goodsList>table img {
+	transition: all 0.8s;
+}
+
+#goodsList>table img:hover {
+	transform: scale(1.04);
+	/* 마우스를 위치할 시 확대 되는 느낌 구현 */
+}
+/* 이미지 마우스 오버효과 적용 끝 */
+
+/* 상품 제목 영역 시작 */
+#goodsList>table td.goodsTitle {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	padding: 10px 0;
+	height: 70px;
+}
+
+/* 상품 가격 영역 시작 */
+#goodsList>table td.goodsPrice {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	padding: 10px 0;
+	height: 35px;
+}
+
+
+
+#goodsList>table td.orgPrice span.orgPr {
+	text-decoration: line-through;
+	text-decoration-color: #ff0000;
+	color: #808080;
+}
+
+#goodsList>table td.orgPrice span.eventRate {
+	color: #f00;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+#goodsList>table td.eventPrice {
+	font-size: 12px;
+}
+
+
+/* div#goodsList 끝 */
+
+/*/////////////////////////////////////////////////////////////
+//////////////////////상품페이지 끝////////////////////////////
+///////////////////////////////////////////////////////////*/

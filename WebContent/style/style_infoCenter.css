@@ -1,0 +1,499 @@
+@charset "UTF-8";
+
+@import url(../source/style_Reset.css);
+
+div#wrap {
+	width: 1200px;
+	border: 2px solid #eee;
+}
+
+/*///////////////////////////////////////////////////////////*/
+/*///////////////////// main#main 시작 ////////////////////*/
+/*///////////////////////////////////////////////////////////*/
+main#main>div#mainlnb {
+	width: 300px;
+	justify-content: center;
+	height: 450px;
+	/* 	  border: 1px solid #000;  */
+}
+
+main#main>div#mainlnb h2 {
+	margin: 15px 0 20px;
+}
+
+main#main>div#mainlnb>nav#mainlnb_M {
+	/*    border: 1px solid #000;  */
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+}
+
+main#main>div#mainlnb>nav#mainlnb_M>ul {
+	width: 88%;
+	border: 3px solid #ccc;
+	border-radius: 2px;
+	height: 78%;
+	margin-left: 20px;
+}
+
+#main>#mainlnb>#mainlnb_M>ul>li {
+	font-size: 18px;
+	/*    border: 1px solid #000;	 */
+	border-bottom: 1px solid #aaa;
+	font-weight: bold;
+	height: 25%;
+	line-height: 82px;
+}
+
+#main>#mainlnb>#mainlnb_M>ul>li:last-child {
+	border-bottom: none;
+}
+
+#main>#mainlnb>#mainlnb_M>ul>li>a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+#main #mainlnb_M>ul>li.main_MLi:hover>a {
+	background-color: #5f0080;
+	color: #fff;
+}
+
+#main #mainlnb_M>ul>li.main_MLi.selected {
+	background-color: #5f0080;
+}
+
+li.selected a {
+	color: #fff;
+}
+
+main#main>div#contents {
+	/*   border: 1px solid #000; */
+	padding-left: 50px;
+	flex: 1;
+}
+
+main#main>div#contents>h3 {
+	margin-top: 15px;
+}
+
+#main>#contents>table#noticeTbl, table#QnaTbl {
+	border-collapse: collapse;
+	width: 77%;
+	text-align: center;
+}
+
+#main>#contents li.chk {
+	font-weight: bold;
+}
+
+#main>#contents table td {
+	font-size: 19px;
+	border-bottom: 1px solid #ddd;
+	line-height: 30px;
+}
+
+#main>#contents table td:first-child {
+	width: 110px;
+}
+
+#main>#contents table td:nth-child(2) {
+	width: 600px;
+}
+
+#main>#contents table td:nth-child(3) {
+	width: 60px;
+}
+
+hr#divisionline_main {
+	border-color: #5f0080;
+	margin: 10px 0;
+	width: 77%;
+}
+
+hr#divisionline_footer {
+	border-color: #5f0080;
+	margin: 10px 0;
+	width: 63%;
+	margin-left: 350px;
+}
+
+#main>#contents>div#searchArea {
+	margin-top: 20px;
+	text-align: right;
+}
+
+#main>#contents>div#searchArea select, #main>#contents>div#searchArea input
+	{
+	padding: 5px;
+	height: 40px;
+	transform: translateY(-15px);
+}
+
+#main>#contents ul {
+	padding-right: 350px;
+	margin-top: 20px;
+	justify-content: center;
+}
+
+#main>#contents ul>li {
+	margin: 6px;
+}
+
+#main>#contents div#buttonArea {
+	text-align: right;
+	padding-right: 350px;
+	margin: 10px 5px 10px 0;
+}
+
+#main>#contents button#write>a {
+	color: #f5f5f5;
+}
+
+#main>#contents button#write {
+	font-size: 20px;
+	padding: 6px;
+	border: none;
+	border: 1px solid #898989;
+	background-color: #5f0080;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#main #contents table#FAQTbl td {
+	width: 10%;
+	line-height: 40px;
+}
+
+.False {
+	display: none;
+}
+
+.cheked {
+	display: none;
+}
+
+#main>#contents>table#FAQTbl {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	width: 77%;
+	text-align: center;
+}
+
+#main>#contents>table#FAQTbl td.Question {
+	text-align: left;
+}
+
+#main>#contents>table#FAQTbl span#Q {
+	display: inline-block;
+	margin-right: 150px;
+}
+
+#main>#contents>table#FAQTbl span {
+	display: inline-block;
+	padding-left: 50px;
+	position: relative;
+	left: 40px;
+}
+
+#main>#contents>table#FAQTbl input#dropBtn1 {
+	border: none;
+	font-size: 24px;
+	padding: 5px;
+	background-color: #fff;
+	color: #5f0080;
+	width: 80px;
+	/*  border: 1px solid #eee;  */
+	cursor: pointer;
+	position: relative;
+	left: 410px;
+}
+
+main>#contents>table#FAQTbl  input#dropBtn2 {
+	border: none;
+	font-size: 24px;
+	padding: 5px;
+	background-color: #fff;
+	color: #5f0080;
+	width: 80px;
+	/*    border: 1px solid #eee;  */
+	cursor: pointer;
+	position: relative;
+	left: 539px;
+}
+
+main>#contents>table#FAQTbl  input#dropBtn3 {
+	border: none;
+	font-size: 24px;
+	padding: 5px;
+	background-color: #fff;
+	color: #5f0080;
+	width: 80px;
+	/*    border: 1px solid #eee;  */
+	cursor: pointer;
+	position: relative;
+	left: 535px;
+}
+
+#main>#contents select {
+	margin: 10px 0px 10px 20px;
+}
+
+table#BBSwrite {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	width: 75%;
+	text-align: center;
+	margin-left: 20px;
+}
+
+#main>#contents table#BBSwrite td:first-child {
+	border-collapse: collapse;
+	width: 250px;
+	line-height: 40px;
+	font-size: 21px;
+	background-color: #f8f8f8;
+}
+
+#main>#contents table#BBSwrite td>input[type=text] {
+	width: 100%;
+	height: 40px;
+	border: none;
+	font-size: 20px;
+	padding: 5px;
+}
+
+#main>#contents table#BBSwrite td#mainwrite {
+	line-height: 120px;
+}
+
+#main>#contents table#BBSwrite td textArea {
+	width: 100%;
+	height: 150px;
+	padding: 10px;
+	border: none;
+	font-size: 18px;
+	resize: none;
+
+	/*  resize: none;*/
+}
+
+#main>#contents table#BBSwrite td#file>input {
+	width: 250px;
+	font-size: 18px;
+}
+
+table#BBSread {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	width: 75%;
+	text-align: center;
+	margin-left: 20px;
+}
+
+#main>#contents table#BBSread td:first-child {
+	width: 250px;
+	line-height: 40px;
+	font-size: 21px;
+	background-color: #f8f8f8;
+}
+
+#main>#contents table#BBSread td:nth-child(2) {
+	width: 400px;
+}
+
+#main>#contents table#BBSread td:nth-child(3) {
+	width: 200px;
+	background-color: #f8f8f8;
+}
+
+#main>#contents table#BBSread td input#writer_read {
+	width: 200px;
+}
+
+#main>#contents table#BBSread td>input[type=text] {
+	width: 100%;
+	height: 40px;
+	border: none;
+	font-size: 20px;
+	padding: 5px;
+	outline: none;
+}
+
+#main>#contents table#BBSread td#mainwrite {
+	line-height: 120px;
+	outline: none;
+}
+
+#main>#contents table#BBSread td textArea {
+	width: 100%;
+	height: 150px;
+	padding: 10px;
+	border: none;
+	font-size: 18px;
+	resize: none;
+	outline: none;
+}
+
+#main>#contents div#btnArea_read, #btnArea_read_q {
+	padding-top: 15px;
+	padding-left: 570px;
+	text-align: center;
+}
+
+#main>#contents div#btnArea_read_q button#indexBtn_q ,button#updateBtn, button#delete{
+	background-color: #5f0080;
+	color: #f7f7f7;
+	border-radius: 4px;
+	padding: 6px;
+	border: none;
+	border: 1px solid #eee;
+	cursor: pointer;
+	width: 80px;
+}
+
+#main>#contents div#btnArea_read button#indexBtn, 
+	button#deleteBtn {
+	background-color: #5f0080;
+	color: #f7f7f7;
+	border-radius: 4px;
+	padding: 6px;
+	border: none;
+	border: 1px solid #eee;
+	cursor: pointer;
+	width: 80px;
+}
+
+#main>#contents div#btnArea {
+	padding-top: 15px;
+	padding-left: 600px;
+	text-align: center;
+}
+
+#main>#contents div#btnArea button#cancelBtn, button#saveBtn {
+	background-color: #5f0080;
+	color: #f7f7f7;
+	border-radius: 4px;
+	padding: 6px;
+	border: none;
+	border: 1px solid #eee;
+	cursor: pointer;
+	width: 100px;
+}
+
+#main>#contents div#btnArea button#cancelBtn:hover {
+	color: #e9e9e9;
+}
+
+#main>#contents div#btnArea button#saveBtn:hover {
+	color: #e9e9e9;
+	background-color: #5f0072;
+}
+
+#main>#contents #searchArea input, select, button {
+	font-size: 18px;
+}
+
+#main>#contents>div#searchArea {
+	padding-right: 355px;
+
+}
+
+#main>#contents #searchArea button {
+	cursor: pointer;
+}
+/*/////////////////////////////////////////////////////////////*/
+/*//////////////////* 1:1문의 CSS //////////////////////////*/
+/*/////////////////////////////////////////////////////////////*/
+#main>#contents table#inquireTbl {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	width: 77%;
+	text-align: center;
+}
+
+#wrap>form#frm>#main>#contents table#inquireTbl td:first-child {
+	width: 400px;
+	background-color: #f7f7f7;
+	font-size: 20px;
+	line-height: 75px;
+}
+
+table#inquireTbl td select#selectinquire_g {
+	width: 300px;
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	outline: none;
+}
+
+table#inquireTbl td select.selectinquire {
+	width: 185px;
+	text-align: center;
+	outline: none;
+	padding: 5px;
+	font-size: 20px;
+}
+
+table#inquireTbl td select.selectinquire:last-child {
+	width: 200px;
+	text-align: center;
+	outline: none;
+	padding: 5px;
+	font-size: 20px;
+}
+
+td#inquireText>textArea {
+	margin-top: 10px;
+	font-size: 21px;
+	width: 90%;
+	height: 150px;
+	outline: none;
+	border: none;
+}
+
+#main>#contents td>input[type=file] {
+	width: 300px;
+	font-size: 20px;
+}
+
+#main>#contents>div#inquire {
+	/*  border: 1px solid #000;*/
+	padding-left: 550px;
+	margin-top: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#main>#contents>div#inquire>button {
+	width: 100px;
+	padding: 6px;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	border: 1px solid #aaa;
+	background-color: #5f0080;
+	color: #f5f5f5;
+	border-radius: 5px;
+}
+
+#main>#contents>div#inquire>button:hover {
+	color: #e7e7e7;
+	background-color: #5f0072;
+}
+
+button#searchBtn{
+	position: absolute;
+	transform: translate(-25px, 3px);
+	border: none;
+	width: 15px;
+	height: 15px;
+	background-color: rgba(255, 255, 255, 0);
+	font-size: 17px;
+	cursor: pointer;
+}
+
+/*/////////////////////////////////////////////////////*/
+/*////////////////// readPage.css//////////////////// */
+/*/////////////////////////////////////////////////////*/

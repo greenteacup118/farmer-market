@@ -1,0 +1,1049 @@
+@charset "UTF-8";
+
+@import url(/source/style_Reset.css);
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------update_info 시작 -------------------------------- */
+/* --------------------------------------------------------------------------- */
+.necessary::after {
+	content: " *";
+	color: #ee6a7b;
+}
+
+div#form-title {
+	border-bottom: 4px solid #000;
+}
+
+div#form-title>p {
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 50px 0;
+}
+
+#form-title div#form-info {
+	text-align: right;
+	font-size: 12px;
+	margin: 15px 0;
+}
+
+form#updateFrm table {
+	margin: 10px auto;
+	width: 750px;
+}
+
+form#updateFrm table td:nth-child(1) {
+	font-weight: bold;
+	width: 160px;
+	padding-left: 20px;
+}
+
+form#updateFrm table input {
+	outline: none;
+}
+
+form#updateFrm table input[type=text], table input[type=password] {
+	width: 370px;
+	padding: 13px 15px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+}
+
+form#updateFrm table button {
+	width: 130px;
+	font-weight: bold;
+	padding: 13px 15px;
+	color: #5f0080;
+	border: 1px solid #5f0080;
+	background-color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+form#updateFrm table tr.beforeAddr button.addrBtn {
+	width: 370px;
+	padding: 13px 15px;
+}
+
+form#updateFrm table label {
+	margin-left: 2px;
+	margin-right: 60px;
+}
+
+form#updateFrm table input[type=radio] {
+	transform: translate(-1px, 5px);
+	width: 17px;
+	height: 17px;
+}
+
+div#birthArea {
+	width: 370px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	text-align: center;
+}
+
+div#birthArea span {
+	color: #aaa;
+	font-size: 18px;
+}
+
+form#updateFrm table input.birthInput {
+	width: 110px;
+	text-align: center;
+	border: none;
+}
+
+form#updateFrm table button.pwBtn, form#updateFrm table button.pwChkBtn
+	{
+	width: 26px;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	border: none;
+	transform: translate(-105px, -9px);
+}
+
+/* -------------------------클릭시 보이도록-------------------------- */
+tr#afterId, tr#afterPw, tr#afterPwChk, tr#afterPhone, tr.afterAddr {
+	display: none;
+}
+/* -------------------------클릭시 보이도록-------------------------- */
+form#updateFrm table tr#afterId td div, tr#afterPw td div, tr#afterPwChk td div,
+	tr.afterAddr td div {
+	margin: 7px 16px;
+	color: #777;
+	transform: translateY(-8px);
+}
+
+form#updateFrm table tr#afterPhone td div {
+	margin: 7px 16px;
+	color: #777;
+	transform: translateY(-8px);
+	color: green;
+}
+
+main#main table#agreeTbl {
+	width: 750px;
+	margin: 10px auto;
+	padding: 20px 10px;
+	border-top: 3px solid #000;
+	border-bottom: 1px solid #eee;
+}
+
+main#main table#agreeTbl td#title {
+	width: 130px;
+	font-weight: bold;
+}
+
+main#main table#agreeTbl td button#agreeBtn {
+	font-size: 13px;
+	border: none;
+	background-color: #fff;
+	color: #5f0080;
+	font-weight: bold;
+	cursor: pointer;
+	transform: translateX(10px);
+}
+
+main#main table#agreeTbl div#joinAgreement {
+	display: none;
+}
+
+main#main table#agreeTbl td:nth-child(2) {
+	width: 50px;
+}
+
+main#main table#agreeTbl td:nth-child(2) input {
+	width: 17px;
+	height: 17px;
+	transform: translateY(1px);
+}
+
+table#agreeTbl tr:first-child td {
+	height: .9em;
+}
+
+table#agreeTbl td p#allAgree {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+table#agreeTbl tr:nth-child(2) td {
+	height: 8px;
+	font-size: 13px;
+}
+
+table#agreeTbl tr.oneAgree {
+	font-size: 15px;
+	color: #666;
+}
+
+table#agreeTbl tr.oneAgree span {
+	color: #999;
+}
+
+div#btnArea {
+	border-bottom: 1px solid #eee;
+	padding: 20px 0;
+	text-align: center;
+}
+
+div#btnArea button#memberBtn {
+	width: 240px;
+	height: 55px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------update_info 끝 -------------------------------- */
+/* --------------------------------------------------------------------------- */
+.checked {
+	background-color: #ccc;
+}
+
+#main #mainlnb_M>ul>li.checked {
+	color: #6e2e99;
+}
+
+.QnA {
+	line-height: 12px;
+}
+
+hr.sepLine { /* Separate Line 경계선*/
+	border: none;
+	border-top: 2px solid #000;
+	margin: 12px 0;
+}
+
+hr.sepLine2 {
+	border: none;
+	border-top: 2px solid #ddd;
+	margin: 12px 0;
+}
+
+/*메인*/
+main#main {
+	width: 1200px;
+	padding: 10px;
+	padding-top: 40px;
+	margin: 0px auto;
+	/*border: 1px solid #f80;*/
+}
+
+/*메뉴 시작*/
+main#main>div#mainlnb {
+	width: 200px;
+	/* border: 1px solid #000; */
+	justify-content: center;
+}
+
+main#main>div#mainlnb h2 {
+	margin: 15px 0 30px 5px;
+	text-align: left;
+	font-size: 28px;
+}
+
+main#main>div#mainlnb>nav#mainlnb_M {
+	/*   border: 1px solid #000; */
+	width: 100%;
+}
+
+main#main>div#mainlnb>nav#mainlnb_M>ul {
+	width: 100%;
+	border-bottom: none;
+	border-radius: 2px;
+}
+
+#main>#mainlnb>#mainlnb_M>ul>li {
+	font-size: 14px;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+	font-weight: bold;
+}
+
+#main>#mainlnb>#mainlnb_M>ul>li>a {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	padding-left: 10px;
+}
+
+#main #mainlnb_M>ul>li.main_MLi>a {
+	font-size: 14px;
+}
+
+#main #mainlnb_M>ul>li.main_MLi:hover>a {
+	background-color: #eee;
+	color: #6e2e99;
+}
+
+/*메뉴 끝*/
+div#contentsArea {
+	flex: 1px;
+	margin-left: 20px;
+}
+
+div#contentsArea>div#title_container {
+	align-items: center; /*가운데정렬*/
+	margin-top: 14px;
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
+div#title {
+	width: 150px;
+}
+
+div#subtitle {
+	flex: 1;
+}
+
+div#select {
+	width: 200px;
+	height: 40px;
+}
+
+div#select>select {
+	width: 200px;
+	height: 40px;
+	padding-left: 12px;
+}
+
+div#contentsArea>h2 {
+	margin: 20px 0 30px 5px;
+	text-align: left;
+	font-size: 24px;
+}
+
+div#contentsArea>div#subtitle p {
+	color: #ddd;
+	font-size: 14px;
+}
+
+#main div#contents p {
+	font-size: 14px;
+	color: #ccc;
+	margin: 20px;
+	text-align: center;
+	line-height: 20px;
+}
+
+/*메인*/
+
+/*주문내역*/
+div#orderListArea {
+	/*border: 1px solid #000;*/
+	margin-top: 10px;
+}
+
+table#orderListTbl {
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+
+table#orderListTbl tr:nth-child(1) {
+	border-bottom: 1px dotted #ccc;
+}
+
+table#orderListTbl td {
+	/*border: 1px solid #000;*/
+	text-align: center;
+}
+
+table#orderListTbl td:nth-child(1) {
+	width: 500px;
+}
+
+table#orderListTbl td:nth-child(2) {
+	width: 300px;
+}
+
+table#orderListTbl td:nth-child(3) {
+	width: 200px;
+}
+
+/*회원탈퇴*/
+div#wrap>main#main>div#contentsArea>div.memQuitDiv {
+	text-align: center;
+	padding: 40px;
+}
+
+div#wrap>main#main>div.memQuitDiv>form#memQuitFrm {
+	text-align: center;
+	padding: 20px;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	display: inline-block;
+}
+
+#main>.memQuitDiv>#memQuitFrm p {
+	width: 350px;
+	font-size: 17px;
+	padding: 13px 16px;
+	margin-bottom: 7px;
+}
+
+#main>#contentsArea>.memQuitDiv>#memQuitFrm button {
+	width: 320px;
+	color: #fff;
+	font-size: 18px;
+	padding: 15px 20px;
+	border: none;
+	margin-top: 17px;
+	margin-bottom: 7px;
+	background-color: #6e2e99;
+	cursor: pointer;
+}
+/*회원탈퇴*/
+
+/*회원정보수정*/
+.necessary::after {
+	content: " *";
+	color: #ee6a7b;
+}
+
+div#form-title {
+	border-bottom: 4px solid #000;
+}
+
+div#form-title>p {
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 50px 0;
+}
+
+#form-title div#form-info {
+	text-align: right;
+	font-size: 12px;
+	margin: 15px 0;
+}
+
+form#updateFrm table {
+	margin: 10px auto;
+	width: 750px;
+}
+
+form#updateFrm table td:nth-child(1) {
+	font-weight: bold;
+	width: 160px;
+	padding-left: 20px;
+}
+
+form#updateFrm table input {
+	outline: none;
+}
+
+form#updateFrm table input[type=text], table input[type=password] {
+	width: 370px;
+	padding: 13px 15px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+}
+
+form#updateFrm table button {
+	width: 130px;
+	font-weight: bold;
+	padding: 13px 15px;
+	color: #5f0080;
+	border: 1px solid #5f0080;
+	background-color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+form#updateFrm table tr.beforeAddr button.addrBtn {
+	width: 370px;
+	padding: 13px 15px;
+}
+
+form#updateFrm table label {
+	margin-left: 2px;
+	margin-right: 60px;
+}
+
+form#updateFrm table input[type=radio] {
+	transform: translate(-1px, 5px);
+	width: 17px;
+	height: 17px;
+}
+
+div#birthArea {
+	width: 370px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	text-align: center;
+}
+
+div#birthArea span {
+	color: #aaa;
+	font-size: 18px;
+}
+
+form#updateFrm table input.birthInput {
+	width: 110px;
+	text-align: center;
+	border: none;
+}
+
+form#updateFrm table button.pwBtn, form#updateFrm table button.pwChkBtn
+	{
+	width: 26px;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	border: none;
+	transform: translate(-240px, -9px);
+}
+
+/* -------------------------클릭시 보이도록-------------------------- */
+tr#afterId, tr#afterPw, tr#afterPwChk, tr#afterPhone, tr.afterAddr {
+	display: none;
+}
+/* -------------------------클릭시 보이도록-------------------------- */
+form#updateFrm table tr#afterId td div, tr#afterPw td div, tr#afterPwChk td div,
+	tr.afterAddr td div {
+	margin: 7px 16px;
+	color: #777;
+	transform: translateY(-8px);
+}
+
+form#updateFrm table tr#afterPhone td div {
+	margin: 7px 16px;
+	color: #777;
+	transform: translateY(-8px);
+	color: green;
+}
+
+main#main table#agreeTbl {
+	width: 750px;
+	margin: 10px auto;
+	padding: 20px 10px;
+	border-top: 3px solid #000;
+	border-bottom: 1px solid #eee;
+}
+
+main#main table#agreeTbl td#title {
+	width: 130px;
+	font-weight: bold;
+}
+
+main#main table#agreeTbl td button#agreeBtn {
+	font-size: 13px;
+	border: none;
+	background-color: #fff;
+	color: #5f0080;
+	font-weight: bold;
+	cursor: pointer;
+	transform: translateX(10px);
+}
+
+main#main table#agreeTbl div#joinAgreement {
+	display: none;
+}
+
+main#main table#agreeTbl td:nth-child(2) {
+	width: 50px;
+}
+
+main#main table#agreeTbl td:nth-child(2) input {
+	width: 17px;
+	height: 17px;
+	transform: translateY(1px);
+}
+
+table#agreeTbl tr:first-child td {
+	height: .9em;
+}
+
+table#agreeTbl td p#allAgree {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+table#agreeTbl tr:nth-child(2) td {
+	height: 8px;
+	font-size: 13px;
+}
+
+table#agreeTbl tr.oneAgree {
+	font-size: 15px;
+	color: #666;
+}
+
+table#agreeTbl tr.oneAgree span {
+	color: #999;
+}
+
+div#btnArea {
+	border-bottom: 1px solid #eee;
+	padding: 20px 0;
+	text-align: center;
+}
+
+div#btnArea button#updateBtn {
+	width: 240px;
+	height: 55px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+td.beforeAddrTd {
+	text-align: center;
+}
+
+/*배송지관리*/
+div#addrList {
+	/*border: 1px solid #000;*/
+	margin-top: 10px;
+}
+
+table#addrTbl {
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+
+table#addrTbl tr:nth-child(1) {
+	border-bottom: 1px dotted #ccc;
+}
+
+table#addrTbl td {
+	/*border: 1px solid #000;*/
+	text-align: center;
+}
+
+table#addrTbl td:nth-child(1) {
+	width: 80px;
+}
+
+table#addrTbl td:nth-child(2) {
+	width: 690px;
+}
+
+table#addrTbl td:nth-child(3) {
+	width: 150px;
+}
+
+table#addrTbl td:nth-child(4) {
+	width: 80px;
+}
+
+/*찜한 상품*/
+div#wishListArea {
+	/*border: 1px solid #000;*/
+	margin-top: 10px;
+}
+
+table#wishListTbl {
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+	font-size: 18px;
+	border-collapse: collapse;
+}
+
+table#wishListTbl tr {
+	border-bottom: 1px dotted #eee;
+}
+
+table#wishListTbl tr:nth-child(1) {
+	border-bottom: 1px dotted #aaa;
+}
+
+table#wishListTbl tr:last-child {
+	border-bottom: 1px dotted #ccc;
+}
+
+table#wishListTbl td {
+	text-align: center;
+}
+
+table#wishListTbl td:nth-child(1) {
+	width: 300px;
+}
+
+table#wishListTbl td:nth-child(2) {
+	width: 300px;
+	font-weight: bold;
+}
+
+table#wishListTbl td:nth-child(3) {
+	width: 100px;
+}
+
+table#wishListTbl td:nth-child(4) {
+	width: 200px;
+}
+
+table#wishListTbl td:nth-child(5) {
+	width: 80px;
+}
+
+table#wishListTbl div#images {
+	width: 300px;
+	height: 180px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+table#wishListTbl div#images  img {
+	width: 50%;
+}
+
+table#wishListTbl button#sendBasketBtn {
+	width: 80px;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+table#wishListTbl button#deleteWishBtn {
+	width: 40px;
+	height: 40px;
+	color: #5f0080;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: #fff;
+	border: 1px solid #5f0080;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*상품 문의*/
+div#goodsQnA {
+	/*border: 1px solid #000;*/
+	margin-top: 10px;
+}
+
+table#QnATbl {
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+
+table#QnATbl tr:nth-child(1) {
+	border-bottom: 1px dotted #ccc;
+}
+
+table#QnATbl td {
+	/*border: 1px solid #000;*/
+	text-align: center;
+}
+
+table#QnATbl td:nth-child(1) {
+	width: 600px;
+}
+
+table#QnATbl td:nth-child(2) {
+	width: 200px;
+	text-align: center;
+}
+
+table#QnATbl td:nth-child(3) {
+	width: 200px;
+}
+
+/*상품후기*/
+div#goodsCm {
+	/*border: 1px solid #000;*/
+	margin-top: 10px;
+}
+
+table#goodsCmTbl {
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+
+table#goodsCmTbl tr:nth-child(1) {
+	border-bottom: 1px dotted #ccc;
+}
+
+table#goodsCmTbl td {
+	/*border: 1px solid #000;*/
+	text-align: center;
+}
+
+table#goodsCmTbl td:nth-child(1) {
+	width: 700px;
+}
+
+table#goodsCmTbl td:nth-child(2) {
+	width: 300px;
+	text-align: center;
+}
+
+/*///////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////추가한 부분 시작////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////*/
+
+/* 상품문의 페이지 시작 */
+table#QnATbl tr.qnaTr {
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+table#QnATbl tr.qnaTr:last-child {
+	border-bottom: 1px solid #aaa;
+}
+
+table#QnATbl tr.qnaTr:hover td {
+	background-color: #efefef;
+}
+/* 상품문의 페이지 끝 */
+
+/* 상품후기 페이지 시작 */
+table#goodsCmTbl tr.qnaTr {
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+table#goodsCmTbl tr.qnaTr:last-child {
+	border-bottom: 1px solid #aaa;
+}
+
+table#goodsCmTbl tr.qnaTr:hover td {
+	background-color: #efefef;
+}
+/* 상품후기 페이지 끝 */
+
+/*///////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////추가한 부분 끝//////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////*/
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------addrUpdate시작 -------------------------------- */
+/* --------------------------------------------------------------------------- */
+#addrFrm table td.beforeAddrTd button.addrBtn {
+	width: 240px;
+	height: 55px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#addrFrm table td.beforeAddrTd button.addrBtn i {
+	color: #fff;
+	font-size: 20px;
+	transform: translateX(-5px);
+}
+
+#addrFrm table tr.afterAddr td:nth-child(1) {
+	width: 100px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#addrFrm table tr.afterAddr td:nth-child(2) {
+	width: 500px;
+}
+
+#addrFrm table tr.afterAddr td:nth-child(2) input {
+	outline: none;
+	border: 1px solid #eee;
+	width: 100%;
+	padding: 5px;
+	height: 100%;
+}
+
+#addrFrm table tr.afterAddr td:nth-child(2) button {
+	width: 85px;
+	height: 45px;
+	color: #fff;
+	font-size: 15px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#addrFrm table tr.afterAddr td:nth-child(2) button i {
+	color: #5f0080;
+	font-size: 20px;
+	transform: translateX(-5px);
+}
+
+#addrFrm table tr.afterAddr td:nth-child(2) button:nth-child(1) {
+	background-color: #fff;
+	border: 1px solid #5f0080;
+	color: #555;
+	width: 100px;
+}
+
+#addrListFrm table {
+	border-collapse: collapse;
+}
+
+#addrListFrm table tr.addrTr {
+	border-bottom: 1px solid #eee;
+}
+
+#addrListFrm table tr:nth-last-child(2) {
+	border-bottom: 1px solid #ccc;
+}
+
+#addrListFrm table tr.addrTr input[type=checkbox] {
+	width: 25px;
+	height: 25px;
+}
+
+#addrListFrm table tr.addrTr input[type=text] {
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	outline: none;
+	border: none;
+}
+
+#addrListFrm table tr.addrTr td:nth-child(3) input {
+	text-align: center;
+}
+
+#addrListFrm table #deleteBtn {
+	width: 85px;
+	height: 45px;
+	color: #fff;
+	font-size: 15px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 10px 0;
+}
+/* --------------------------------------------------------------------------- */
+/* ---------------------------addrUpdate끝 -------------------------------- */
+/* --------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------- */
+/* ---------------------------myPageRead시작 ------------------------------ */
+/* --------------------------------------------------------------------------- */
+div.bbsSubtitle p {
+	font-size: .8em;
+	margin-top: 4px;
+}
+
+table#bbsTbl {
+	margin: 30px auto;
+	width: 100%;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table#bbsTbl tr {
+	border-bottom: 1px solid #ededed;
+}
+
+table#bbsTbl tr:last-child {
+	border-bottom: 1px solid #ddd;
+}
+
+table#bbsTbl td {
+	text-align: center;
+}
+
+table#bbsTbl td.tdTitle {
+	font-weight: bold;
+	font-size: 15px;
+	width: 50px;
+	background-color: #f7f5f8;
+}
+
+table#bbsTbl td.tdContent {
+	width: 100%;
+}
+
+table#bbsTbl tr#viewAndDate td:nth-child(2), tr#viewAndDate td:nth-child(4)
+	{
+	width: 50px;
+}
+
+tr#viewAndDate td:nth-child(4) input {
+	text-align: center;
+}
+
+table#bbsTbl td input {
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	padding: 3px 8px;
+	outline: none;
+	border: none;
+	overflow: hidden;
+}
+
+table#bbsTbl div#img {
+	overflow: hidden;
+	text-align: center;
+}
+
+table#bbsTbl div#img img {
+	width: 300px;
+	height: 100%;
+}
+
+table#bbsTbl td textArea {
+	width: 100%;
+	height: 500px;
+	resize: none;
+	outline: none;
+	border: none;
+	padding: 30px;
+}
+
+table#bbsTbl tr#btnArea td {
+	text-align: right;
+}
+
+table#bbsTbl tr#btnArea button {
+	width: 80px;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #5f0080;
+	border: none;
+	border-radius: 6px;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 0 10px;
+}
+
+table#bbsTbl tr#beforeRead td:nth-child(2) input:hover, table#bbsTbl tr#afterRead td:nth-child(2) input:hover
+	{
+	cursor: pointer;
+	font-weight: bold;
+}
+/* --------------------------------------------------------------------------- */
+/* ---------------------------myPageRead끝 -------------------------------- */
+/* --------------------------------------------------------------------------- */
